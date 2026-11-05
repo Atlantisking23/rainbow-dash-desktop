@@ -1,0 +1,573 @@
+{
+  "additional_selected_key_poses": 10,
+  "runtime_action_frames": 16,
+  "action_duration_ms": 1185,
+  "source_maps": [
+    {
+      "source": "page",
+      "source_cel": 0,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "page",
+      "source_cel": 1,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "page",
+      "source_cel": 2,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "page",
+      "source_cel": 3,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "page",
+      "source_cel": 4,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "page",
+      "source_cel": 5,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 0,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 1,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 2,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 3,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 4,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    },
+    {
+      "source": "hoof",
+      "source_cel": 5,
+      "registration_translation": [
+        0,
+        0
+      ],
+      "runtime_transform": {
+        "source_component_bbox": [
+          1094,
+          551,
+          1529,
+          1010
+        ],
+        "source_anchor": [
+          351.5,
+          561
+        ],
+        "target_anchor": [
+          256,
+          480
+        ],
+        "scale": 0.76,
+        "offset": [
+          -11,
+          54
+        ],
+        "mirrored": false,
+        "final_bbox": [
+          88,
+          130,
+          424,
+          483
+        ],
+        "source_cel_index": 5
+      },
+      "composite_region": "Book/right hoof only; eyes, body/cloud/tail locked to existing frame005",
+      "outside_mask_unchanged": true
+    }
+  ],
+  "sequence": [
+    {
+      "runtime_frame": 6,
+      "source": "hoof",
+      "source_cel": 0,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 7,
+      "source": "hoof",
+      "source_cel": 2,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 8,
+      "source": "hoof",
+      "source_cel": 1,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 9,
+      "source": "hoof",
+      "source_cel": 4,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 10,
+      "source": "hoof",
+      "source_cel": 3,
+      "delay_ms": 70
+    },
+    {
+      "runtime_frame": 11,
+      "source": "page",
+      "source_cel": 0,
+      "delay_ms": 70
+    },
+    {
+      "runtime_frame": 12,
+      "source": "page",
+      "source_cel": 1,
+      "delay_ms": 90
+    },
+    {
+      "runtime_frame": 13,
+      "source": "page",
+      "source_cel": 2,
+      "delay_ms": 130
+    },
+    {
+      "runtime_frame": 14,
+      "source": "page",
+      "source_cel": 3,
+      "delay_ms": 130
+    },
+    {
+      "runtime_frame": 15,
+      "source": "page",
+      "source_cel": 4,
+      "delay_ms": 100
+    },
+    {
+      "runtime_frame": 16,
+      "source": "hoof",
+      "source_cel": 3,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 17,
+      "source": "hoof",
+      "source_cel": 4,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 18,
+      "source": "hoof",
+      "source_cel": 1,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 19,
+      "source": "hoof",
+      "source_cel": 2,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 20,
+      "source": "hoof",
+      "source_cel": 0,
+      "delay_ms": 55
+    },
+    {
+      "runtime_frame": 21,
+      "source": "rest",
+      "source_cel": 5,
+      "delay_ms": 100
+    }
+  ]
+}

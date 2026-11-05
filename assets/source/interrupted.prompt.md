@@ -1,0 +1,18 @@
+Use case: identity-preserve.
+Asset: six key animation cels for a G4 Rainbow Dash desktop companion, INTERRUPTED reaction. Six key poses, not a high-frame-rate animation.
+
+Input image 1 is a contact sheet of six authentic original G4 Friendship Is Magic television screenshots. Use it as anatomy/color and facial-acting reference. It demonstrates the desired facial phase sequence. The surrounding episode backgrounds, other characters, reference labels and airborne poses are NOT part of the requested asset. Do not use the previous fan-like permanently smug desktop-pony design. Follow original-show Rainbow Dash: natural large magenta almond eyes, rounded blunt muzzle, cyan coat, recognizable spiky rainbow mane/tail, clean G4 proportions and slim straight hoof-ended legs, feathered wings and the white cloud/red-yellow-blue lightning cutie mark. One consistent show-model pony in all six cels. Clean flat 2D TV cel art, simple crisp colored outlines, no chibi, no 3D, no gradients or painted shading.
+
+Output exactly one landscape1536x1024 or higher-resolution3:2 PNG sprite sheet. Invisible exact3-column by2-row grid, six equal square cells,512x512percell at1536x1024. Reading order is top-left, top-middle, top-right, bottom-left, bottom-middle, bottom-right. Exactly one complete full-body pony per cell, at the SAME scale and anchored position. All six ponies stand in the same three-quarter view facing RIGHT, wings calmly folded, FOUR hooves on the same fixed floor baseline. No airborne pose, no hopping, no whole-body bobbing, no extra legs, no sliding or camera change. Full mane, tail, ears, hooves and wings must fit inside every cell, with at least12% empty margin on every side. Stable identical body geometry; motion is primarily the face, eyebrows, eyelids, ears and slight head tilt.
+
+The facial acting MUST visibly differ by these six phases, as one coherent short surprise-to-puzzled reaction:
+1. INITIAL: warm neutral attentive NORMAL open eyes, relaxed eyebrows, tiny friendly closed-mouth smile. Not half-lidded, not glaring.
+2. BRIEF SURPRISE: eyebrows lift a little, normal eyes open slightly wider for one instant, small softly parted mouth. Mild interruption, not terrified or screaming. Do not make enormous permanent round white eyes.
+3. SOFTEN: eyelids and brows ease back down to their ordinary relaxed shape; mouth almost closes. Inner brow gently concerned, never both eyebrows slanting angrily downward.
+4. PUZZLED: head inclines about10degrees to one side, ONE eyebrow gently raised, ears slightly asymmetric, normal soft eyes looking toward an implied offscreen subject. A very small questioning mouth shape.
+5. BLINK: same tilted head and planted feet, both eyelids fully closed in a natural calm single blink. Mouth relaxed.
+6. SETTLE: eyes reopen normally into a mild, friendly puzzled look, head still a little tilted, slight asymmetric brow, mouth soft and nearly closed. She is ready to listen, not upset.
+
+Important: do not give every pose the same half-lidded smug eyes. Do not freeze wide surprise eyes across multiple phases. No angry brows, angry frown, tears, fainting, panic, clenched teeth or dramatic recoil. Do not copy the airborne body in the screenshot reference; ALL FOUR HOOVES STAY PLANTED in every output cel.
+
+Background must be genuine RGBA transparency, alpha zero outside the clean character silhouettes. No scene, floor, ground line, shadow, colored glow, blue haze, checkerboard, visible grid, cell border, reference labels, lettering, numbering or effects. Fully opaque flat character colors with antialiasing only along the contour. Prioritize correct original-show facial phases and identical anatomy over large movements.

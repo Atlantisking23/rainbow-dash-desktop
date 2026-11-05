@@ -1,0 +1,19 @@
+# Local build products and test logs
+*.exe
+*.dll
+*.pdb
+*.log
+.test-output/
+bin/
+obj/
+*.zip
+
+# Machine-specific settings, credentials and editor files
+settings.json
+.codex/
+.env
+.env.*
+*.user
+.vs/
+Thumbs.db
+Desktop.ini

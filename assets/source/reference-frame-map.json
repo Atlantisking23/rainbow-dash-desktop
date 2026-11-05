@@ -1,0 +1,66 @@
+{
+  "interrupted-reference": [
+    [
+      "completed-relaxed",
+      0,
+      "1 normal soft attentive eyes"
+    ],
+    [
+      "interrupt-looking",
+      900,
+      "2 brief surprise, lifted brows"
+    ],
+    [
+      "interrupt-headtilt",
+      480,
+      "3 softened eye and gentle brow"
+    ],
+    [
+      "interrupt-headtilt",
+      1380,
+      "4 head tilt, asymmetric brow"
+    ],
+    [
+      "interrupt-blink",
+      2680,
+      "5 single calm closed-eye blink"
+    ],
+    [
+      "interrupt-headtilt",
+      2340,
+      "6 gentle puzzled settling hold"
+    ]
+  ],
+  "completed-reference": [
+    [
+      "completed-relaxed",
+      0,
+      "1 normal soft friendly smile"
+    ],
+    [
+      "completed-smile",
+      560,
+      "2 eyelids lowering briefly"
+    ],
+    [
+      "completed-relaxed",
+      1560,
+      "3 closed upward crescent smile"
+    ],
+    [
+      "completed-hoofykicks",
+      210,
+      "4 chest lift and small wing opening"
+    ],
+    [
+      "completed-smile",
+      1040,
+      "5 happy closed eyes, slight head dip"
+    ],
+    [
+      "completed-relaxed",
+      1980,
+      "6 relaxed happy closed-eye hold"
+    ]
+  ]
+}

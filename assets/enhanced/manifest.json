@@ -1,0 +1,2075 @@
+{
+  "created_date": "2026-10-26",
+  "source_type": "Newly generated G4-style animation key cels using built-in image_gen; not original show frames",
+  "clip_count": 10,
+  "authored_key_poses": 60,
+  "runtime_pngs": 60,
+  "frame_size": [
+    512,
+    512
+  ],
+  "processing": "Original source RGB is preserved. Alpha core threshold 200 plus a 2-pixel original antialias fringe removes connected low-coverage generation halos; distant islands smaller than 1% of the largest component and farther than 4px are removed. All cels within a clip share a single scale and target box; optional registration uses integer translation only.",
+  "direction_normalization": "gaze-idle and gaze-working whole-clip reflection; proud source indices 2 and 3 reflected as complete cels. No facial repainting or per-frame scaling.",
+  "source_tool": "source/assembly-tool-reference.cs",
+  "source_tool_checks": 111,
+  "clips": [
+    {
+      "kind": "dock-side",
+      "source_file": "source/dock-side.png",
+      "source_sha256": "891DFD60C9F0D0BB07C4D002260B90BFC248DD298CAFF7F9DCF9288C311231EC",
+      "prompt": "source/dock-side.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.793798447,
+      "shared_crop": {
+        "left": 25,
+        "top": 76,
+        "width": 645,
+        "height": 423
+      },
+      "shared_registration": {
+        "left": 0,
+        "top": 88.11163,
+        "width": 512,
+        "height": 335.776733,
+        "padding": 0
+      },
+      "target_box": null,
+      "integer_translation_alignment": false,
+      "mirror_all": null,
+      "mirrored_source_frame_indices": null,
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 491567,
+        "removedLowCoveragePixels": 32489
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 459078
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "dock-side/000.png",
+          "mapping": "fly-toward-edge",
+          "sha256": "3B60F7870EA501DF2D4834100ADA2243A9F61C22406161EB6B711EFFB6FCEB81",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 25,
+            "top": 131,
+            "width": 585,
+            "height": 338
+          },
+          "runtime_bounds": {
+            "left": 0,
+            "top": 131,
+            "width": 465,
+            "height": 270
+          },
+          "visible_pixels": 70416,
+          "transparent_pixels": 191728
+        },
+        {
+          "index": 1,
+          "file": "dock-side/001.png",
+          "mapping": "brake-and-turn",
+          "sha256": "D6B4E67ED75CF28108B4FBF65FFAE9DCFCB175D094E32811C68E6071DF2CD54D",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 116,
+            "top": 143,
+            "width": 475,
+            "height": 356
+          },
+          "runtime_bounds": {
+            "left": 72,
+            "top": 142,
+            "width": 377,
+            "height": 281
+          },
+          "visible_pixels": 66809,
+          "transparent_pixels": 195335
+        },
+        {
+          "index": 2,
+          "file": "dock-side/002.png",
+          "mapping": "grip-edge",
+          "sha256": "074895D539B268565447890FA92B6325E31ACADEC0D6EFB10EEC72D677EC0A7A",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 153,
+            "top": 145,
+            "width": 339,
+            "height": 344
+          },
+          "runtime_bounds": {
+            "left": 101,
+            "top": 143,
+            "width": 270,
+            "height": 273
+          },
+          "visible_pixels": 38786,
+          "transparent_pixels": 223358
+        },
+        {
+          "index": 3,
+          "file": "dock-side/003.png",
+          "mapping": "body-withdraws",
+          "sha256": "89134671E087E5D42319D4AC19B8911AE3D33EA3F0626C6342326D711DD491DD",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 287,
+            "top": 86,
+            "width": 383,
+            "height": 328
+          },
+          "runtime_bounds": {
+            "left": 208,
+            "top": 96,
+            "width": 304,
+            "height": 261
+          },
+          "visible_pixels": 40754,
+          "transparent_pixels": 221390
+        },
+        {
+          "index": 4,
+          "file": "dock-side/004.png",
+          "mapping": "look-back",
+          "sha256": "01B8C7590E4027E4AC8F591EC7E58B43383C189D0D708A77951EEB585B33EB81",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 314,
+            "top": 80,
+            "width": 343,
+            "height": 304
+          },
+          "runtime_bounds": {
+            "left": 229,
+            "top": 91,
+            "width": 272,
+            "height": 241
+          },
+          "visible_pixels": 36595,
+          "transparent_pixels": 225549
+        },
+        {
+          "index": 5,
+          "file": "dock-side/005.png",
+          "mapping": "settled-peek",
+          "sha256": "3B426740D1DD7A49D859404C2DCE4056C97E60525E0CF74AD968BC23B167DDC4",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 206,
+            "top": 76,
+            "width": 292,
+            "height": 315
+          },
+          "runtime_bounds": {
+            "left": 143,
+            "top": 89,
+            "width": 232,
+            "height": 248
+          },
+          "visible_pixels": 32701,
+          "transparent_pixels": 229443
+        }
+      ]
+    },
+    {
+      "kind": "dock-top",
+      "source_file": "source/dock-top.png",
+      "source_sha256": "4A7694AC3F268FA7213495493051EF074ECB2B2E63FB4BE7926C2A0193170874",
+      "prompt": "source/dock-top.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 1.06444907,
+      "shared_crop": {
+        "left": 60,
+        "top": 25,
+        "width": 448,
+        "height": 481
+      },
+      "shared_registration": {
+        "left": 17.5634155,
+        "top": 0,
+        "width": 476.873169,
+        "height": 512,
+        "padding": 0
+      },
+      "target_box": null,
+      "integer_translation_alignment": false,
+      "mirror_all": null,
+      "mirrored_source_frame_indices": null,
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 531883,
+        "removedLowCoveragePixels": 50298
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 481585
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "dock-top/000.png",
+          "mapping": "fly-up",
+          "sha256": "FE50E0F2AC6BF1092AF8734AAE8307C19F4F2053BC8946C35D96D75964155707",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 60,
+            "top": 61,
+            "width": 448,
+            "height": 440
+          },
+          "runtime_bounds": {
+            "left": 18,
+            "top": 38,
+            "width": 476,
+            "height": 469
+          },
+          "visible_pixels": 114582,
+          "transparent_pixels": 147562
+        },
+        {
+          "index": 1,
+          "file": "dock-top/001.png",
+          "mapping": "grip-upper-edge",
+          "sha256": "D8B1ADB481A0D296E29E21DB5B5E24D48D90F899186BA3D0FC7904B983FD785A",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 95,
+            "top": 34,
+            "width": 285,
+            "height": 472
+          },
+          "runtime_bounds": {
+            "left": 57,
+            "top": 9,
+            "width": 303,
+            "height": 503
+          },
+          "visible_pixels": 99653,
+          "transparent_pixels": 162491
+        },
+        {
+          "index": 2,
+          "file": "dock-top/002.png",
+          "mapping": "turn-over",
+          "sha256": "1C44D15333680EAA896903EC342ACC0A64867A21DD3851DC38391ECE5CEE43E1",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 122,
+            "top": 34,
+            "width": 269,
+            "height": 401
+          },
+          "runtime_bounds": {
+            "left": 84,
+            "top": 10,
+            "width": 287,
+            "height": 427
+          },
+          "visible_pixels": 78464,
+          "transparent_pixels": 183680
+        },
+        {
+          "index": 3,
+          "file": "dock-top/003.png",
+          "mapping": "head-descends",
+          "sha256": "19A1A476E2F54B043C268932BAAFE5743126CED7D55FFA4076EDFA473F42AECF",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 149,
+            "top": 28,
+            "width": 266,
+            "height": 410
+          },
+          "runtime_bounds": {
+            "left": 113,
+            "top": 3,
+            "width": 283,
+            "height": 437
+          },
+          "visible_pixels": 75985,
+          "transparent_pixels": 186159
+        },
+        {
+          "index": 4,
+          "file": "dock-top/004.png",
+          "mapping": "settle-upside-down",
+          "sha256": "A9A01F6D1CC96FD43D45A577BA98FDF10282A4D6B4F9E84B4525D473562158CA",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 126,
+            "top": 25,
+            "width": 254,
+            "height": 425
+          },
+          "runtime_bounds": {
+            "left": 88,
+            "top": 0,
+            "width": 270,
+            "height": 453
+          },
+          "visible_pixels": 82721,
+          "transparent_pixels": 179423
+        },
+        {
+          "index": 5,
+          "file": "dock-top/005.png",
+          "mapping": "relaxed-hang",
+          "sha256": "DB1E58F0E8AC575CA6A2F6778E7C2D7BC7D8EEB5F689BC457248964BB5BB83DD",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 107,
+            "top": 25,
+            "width": 286,
+            "height": 423
+          },
+          "runtime_bounds": {
+            "left": 68,
+            "top": 0,
+            "width": 305,
+            "height": 450
+          },
+          "visible_pixels": 90294,
+          "transparent_pixels": 171850
+        }
+      ]
+    },
+    {
+      "kind": "dock-bottom",
+      "source_file": "source/dock-bottom.png",
+      "source_sha256": "76B42312F0147EC2585FC63439A0E759E48868BF69735E4BD75671082FFB126F",
+      "prompt": "source/dock-bottom.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.9142857,
+      "shared_crop": {
+        "left": 20,
+        "top": 54,
+        "width": 560,
+        "height": 500
+      },
+      "shared_registration": {
+        "left": 0,
+        "top": 54.8571472,
+        "width": 512,
+        "height": 457.142853,
+        "padding": 0
+      },
+      "target_box": null,
+      "integer_translation_alignment": false,
+      "mirror_all": null,
+      "mirrored_source_frame_indices": null,
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 738229,
+        "removedLowCoveragePixels": 96489
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 641740
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "dock-bottom/000.png",
+          "mapping": "descend",
+          "sha256": "F7228C1C5E737CB35B3FB1CF3486748BA9099B0FB4B9D89BDC284E10AE03DF4F",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 20,
+            "top": 54,
+            "width": 560,
+            "height": 486
+          },
+          "runtime_bounds": {
+            "left": 0,
+            "top": 55,
+            "width": 512,
+            "height": 445
+          },
+          "visible_pixels": 120134,
+          "transparent_pixels": 142010
+        },
+        {
+          "index": 1,
+          "file": "dock-bottom/001.png",
+          "mapping": "land",
+          "sha256": "894F78E84F40636018ADA6039C01DAFF4CD2125EB966D2FBE7276C496DCD3CC5",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 125,
+            "top": 112,
+            "width": 349,
+            "height": 438
+          },
+          "runtime_bounds": {
+            "left": 96,
+            "top": 109,
+            "width": 320,
+            "height": 399
+          },
+          "visible_pixels": 85109,
+          "transparent_pixels": 177035
+        },
+        {
+          "index": 2,
+          "file": "dock-bottom/002.png",
+          "mapping": "crouch",
+          "sha256": "2F26AA8F5FC2BDA873953CB29072D2E7DE42B53851940FB05B43A5E05D4DEE67",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 30,
+            "top": 152,
+            "width": 391,
+            "height": 402
+          },
+          "runtime_bounds": {
+            "left": 9,
+            "top": 144,
+            "width": 357,
+            "height": 367
+          },
+          "visible_pixels": 93892,
+          "transparent_pixels": 168252
+        },
+        {
+          "index": 3,
+          "file": "dock-bottom/003.png",
+          "mapping": "peek-over-edge",
+          "sha256": "AFDE907EE174B1C2C4830D483BB7C4697A7C8A70A3A16CD65D9074E8E6C648F5",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 101,
+            "top": 126,
+            "width": 366,
+            "height": 340
+          },
+          "runtime_bounds": {
+            "left": 74,
+            "top": 120,
+            "width": 334,
+            "height": 311
+          },
+          "visible_pixels": 74271,
+          "transparent_pixels": 187873
+        },
+        {
+          "index": 4,
+          "file": "dock-bottom/004.png",
+          "mapping": "wink",
+          "sha256": "39AA1D7F135B0218A7072751693E2DD48B20B6B89E8B5DD5DD830F9176492764",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 82,
+            "top": 125,
+            "width": 378,
+            "height": 341
+          },
+          "runtime_bounds": {
+            "left": 56,
+            "top": 120,
+            "width": 347,
+            "height": 311
+          },
+          "visible_pixels": 75816,
+          "transparent_pixels": 186328
+        },
+        {
+          "index": 5,
+          "file": "dock-bottom/005.png",
+          "mapping": "settled-peek",
+          "sha256": "156A369A8B50974501F5BFB2D7F5A4ADBCBE335707244C995EEFAAAD19EDD60B",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 66,
+            "top": 88,
+            "width": 374,
+            "height": 378
+          },
+          "runtime_bounds": {
+            "left": 42,
+            "top": 86,
+            "width": 341,
+            "height": 345
+          },
+          "visible_pixels": 83315,
+          "transparent_pixels": 178829
+        }
+      ]
+    },
+    {
+      "kind": "close-book",
+      "source_file": "source/close-book.png",
+      "source_sha256": "CC41EA2F0E3A6E4C6B379E0C68C3931BC207F1B953236C4D5C27305403B034A3",
+      "prompt": "source/close-book.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.713709652,
+      "shared_crop": {
+        "left": 34,
+        "top": 11,
+        "width": 469,
+        "height": 496
+      },
+      "shared_registration": {
+        "left": 88.6350861,
+        "top": 130,
+        "width": 334.729828,
+        "height": 354,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 88,
+        "top": 130,
+        "width": 336,
+        "height": 354
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": null,
+      "mirrored_source_frame_indices": null,
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 786012,
+        "removedLowCoveragePixels": 33107
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 752905
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "close-book/000.png",
+          "mapping": "reading",
+          "sha256": "C4EFE13F21680E363CB7B116758CD6B987981C626CBA60E489CD472473CF74B6",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 26,
+            "width": 469,
+            "height": 481
+          },
+          "runtime_bounds": {
+            "left": 89,
+            "top": 141,
+            "width": 334,
+            "height": 343
+          },
+          "visible_pixels": 65240,
+          "transparent_pixels": 196904
+        },
+        {
+          "index": 1,
+          "file": "close-book/001.png",
+          "mapping": "settle-page",
+          "sha256": "0CE46152B44650AB2F906F028DC607B0ED9E27E480A56E247D4237F768063F9D",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 1,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 24,
+            "width": 468,
+            "height": 483
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 139,
+            "width": 333,
+            "height": 345
+          },
+          "visible_pixels": 64360,
+          "transparent_pixels": 197784
+        },
+        {
+          "index": 2,
+          "file": "close-book/002.png",
+          "mapping": "close-covers",
+          "sha256": "84915B14B93B3A70D46EDDD8EE4949FD92D7DAA489E44C34085A27939B87000D",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 26,
+            "width": 469,
+            "height": 481
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 141,
+            "width": 333,
+            "height": 343
+          },
+          "visible_pixels": 63665,
+          "transparent_pixels": 198479
+        },
+        {
+          "index": 3,
+          "file": "close-book/003.png",
+          "mapping": "book-closed",
+          "sha256": "3DAE0CF6BDC51F99F11F144287A7F322407CD092BAD067AC95F3E123D6EABE09",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": -2
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 22,
+            "width": 469,
+            "height": 487
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 136,
+            "width": 333,
+            "height": 348
+          },
+          "visible_pixels": 62312,
+          "transparent_pixels": 199832
+        },
+        {
+          "index": 4,
+          "file": "close-book/004.png",
+          "mapping": "look-up",
+          "sha256": "7C327663AFBFD3A6ADD66B788AA979E3799DFF99D91C71412CB8474708D34090",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 1,
+            "y": -2
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 13,
+            "width": 468,
+            "height": 496
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 130,
+            "width": 333,
+            "height": 353
+          },
+          "visible_pixels": 61958,
+          "transparent_pixels": 200186
+        },
+        {
+          "index": 5,
+          "file": "close-book/005.png",
+          "mapping": "proud-smile",
+          "sha256": "F5C29F1C15E4021CF97ED8B68544BAFF7687C9DF0EA117D4126F15EE2551AAF3",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 1,
+            "y": -2
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 13,
+            "width": 468,
+            "height": 496
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 130,
+            "width": 333,
+            "height": 353
+          },
+          "visible_pixels": 61934,
+          "transparent_pixels": 200210
+        }
+      ]
+    },
+    {
+      "kind": "interrupt-book",
+      "source_file": "source/interrupt-book.png",
+      "source_sha256": "3019A3FC066C9DC1C6285BAC5198457AA34C2BE85125D7298E2A3498D2B3F915",
+      "prompt": "source/interrupt-book.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.7195122,
+      "shared_crop": {
+        "left": 32,
+        "top": 5,
+        "width": 466,
+        "height": 492
+      },
+      "shared_registration": {
+        "left": 88.35365,
+        "top": 130,
+        "width": 335.2927,
+        "height": 354,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 88,
+        "top": 130,
+        "width": 336,
+        "height": 354
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": null,
+      "mirrored_source_frame_indices": null,
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 823868,
+        "removedLowCoveragePixels": 64082
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 759786
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "interrupt-book/000.png",
+          "mapping": "reading",
+          "sha256": "D946568890BD0C6A1CF98F07F72FA75820D9B0E139F210822429E68A0253ED1D",
+          "mirrored": null,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 34,
+            "top": 15,
+            "width": 463,
+            "height": 482
+          },
+          "runtime_bounds": {
+            "left": 89,
+            "top": 137,
+            "width": 334,
+            "height": 347
+          },
+          "visible_pixels": 64646,
+          "transparent_pixels": 197498
+        },
+        {
+          "index": 1,
+          "file": "interrupt-book/001.png",
+          "mapping": "stop-page",
+          "sha256": "A695C99BE667BCCC74D6025BA51D102883D263120768F21DD0C5204892E64817",
+          "mirrored": null,
+          "integer_translation": {
+            "x": -1,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 36,
+            "top": 15,
+            "width": 461,
+            "height": 482
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 137,
+            "width": 332,
+            "height": 347
+          },
+          "visible_pixels": 65921,
+          "transparent_pixels": 196223
+        },
+        {
+          "index": 2,
+          "file": "interrupt-book/002.png",
+          "mapping": "attention-shifts",
+          "sha256": "126EF8148B11996C4CF30C6CDDF6B7EFA6C6D9CA21D5DE177A3E074D5D1B49A9",
+          "mirrored": null,
+          "integer_translation": {
+            "x": -3,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 36,
+            "top": 15,
+            "width": 465,
+            "height": 482
+          },
+          "runtime_bounds": {
+            "left": 89,
+            "top": 137,
+            "width": 334,
+            "height": 347
+          },
+          "visible_pixels": 66276,
+          "transparent_pixels": 195868
+        },
+        {
+          "index": 3,
+          "file": "interrupt-book/003.png",
+          "mapping": "look-aside",
+          "sha256": "3C158BCC6894A3B3E1C177A25F485FEC1BA795F71C7067B48AAFA30C259CD9F2",
+          "mirrored": null,
+          "integer_translation": {
+            "x": -1,
+            "y": -1
+          },
+          "source_bounds": {
+            "left": 33,
+            "top": 6,
+            "width": 466,
+            "height": 492
+          },
+          "runtime_bounds": {
+            "left": 88,
+            "top": 131,
+            "width": 335,
+            "height": 352
+          },
+          "visible_pixels": 64446,
+          "transparent_pixels": 197698
+        },
+        {
+          "index": 4,
+          "file": "interrupt-book/004.png",
+          "mapping": "questioning",
+          "sha256": "C54A649D1EF8B29E3457F2B63B6869D9CDFEF1BCACAFCE74F4F2E4FBD507F25B",
+          "mirrored": null,
+          "integer_translation": {
+            "x": -3,
+            "y": -1
+          },
+          "source_bounds": {
+            "left": 35,
+            "top": 8,
+            "width": 466,
+            "height": 490
+          },
+          "runtime_bounds": {
+            "left": 88,
+            "top": 131,
+            "width": 335,
+            "height": 352
+          },
+          "visible_pixels": 63838,
+          "transparent_pixels": 198306
+        },
+        {
+          "index": 5,
+          "file": "interrupt-book/005.png",
+          "mapping": "hold",
+          "sha256": "25FCC09B5A1C1CC1A9FF37FE6081127D4878AA1997416EA3ECBF7EF8CE6D91B5",
+          "mirrored": null,
+          "integer_translation": {
+            "x": -4,
+            "y": -1
+          },
+          "source_bounds": {
+            "left": 37,
+            "top": 6,
+            "width": 465,
+            "height": 492
+          },
+          "runtime_bounds": {
+            "left": 89,
+            "top": 130,
+            "width": 334,
+            "height": 353
+          },
+          "visible_pixels": 64098,
+          "transparent_pixels": 198046
+        }
+      ]
+    },
+    {
+      "kind": "hair",
+      "source_file": "source/hair.png",
+      "source_sha256": "C96A1E248A77CB42AC0860A7E518B9EA99F6B195D4400B28198244036888CFA6",
+      "prompt": "source/hair.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.847533643,
+      "shared_crop": {
+        "left": 75,
+        "top": 40,
+        "width": 446,
+        "height": 453
+      },
+      "shared_registration": {
+        "left": 53,
+        "top": 97.06726,
+        "width": 378,
+        "height": 383.932739,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 53,
+        "top": 96,
+        "width": 378,
+        "height": 385
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": false,
+      "mirrored_source_frame_indices": [],
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 698178,
+        "removedLowCoveragePixels": 65881
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 632297
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "hair/000.png",
+          "mapping": "standing",
+          "sha256": "CB34C3119E96B457A26A5B4CC401299A9D54BBF933A5A9FC9E91B6EBD9085648",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 80,
+            "top": 55,
+            "width": 436,
+            "height": 438
+          },
+          "runtime_bounds": {
+            "left": 57,
+            "top": 110,
+            "width": 370,
+            "height": 371
+          },
+          "visible_pixels": 71870,
+          "transparent_pixels": 190274
+        },
+        {
+          "index": 1,
+          "file": "hair/001.png",
+          "mapping": "raise-hoof",
+          "sha256": "6AE0EC06347659231F172DF457F6A65F2F4DF08FB6E9F17ED884A499BFB25AEF",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -16,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 93,
+            "top": 56,
+            "width": 442,
+            "height": 437
+          },
+          "runtime_bounds": {
+            "left": 54,
+            "top": 112,
+            "width": 376,
+            "height": 368
+          },
+          "visible_pixels": 72749,
+          "transparent_pixels": 189395
+        },
+        {
+          "index": 2,
+          "file": "hair/002.png",
+          "mapping": "sweep-forelock",
+          "sha256": "634E8D6CBA1C9856FA08F995461AB04B918748DB859A2CD8C2C9A78FC3924BAB",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -2,
+            "y": -1
+          },
+          "source_bounds": {
+            "left": 88,
+            "top": 46,
+            "width": 424,
+            "height": 448
+          },
+          "runtime_bounds": {
+            "left": 63,
+            "top": 102,
+            "width": 359,
+            "height": 379
+          },
+          "visible_pixels": 76336,
+          "transparent_pixels": 185808
+        },
+        {
+          "index": 3,
+          "file": "hair/003.png",
+          "mapping": "head-toss",
+          "sha256": "A340A7EEAE319B040CD8EAF0536E7E019412B50F8CC11A249BC90C43C3BE4E1C",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -6,
+            "y": 14
+          },
+          "source_bounds": {
+            "left": 86,
+            "top": 26,
+            "width": 436,
+            "height": 453
+          },
+          "runtime_bounds": {
+            "left": 58,
+            "top": 98,
+            "width": 369,
+            "height": 383
+          },
+          "visible_pixels": 78723,
+          "transparent_pixels": 183421
+        },
+        {
+          "index": 4,
+          "file": "hair/004.png",
+          "mapping": "lower-hoof",
+          "sha256": "EC0B8BD5453559A7342B3A69EFEAA63839A09A07FC8AE848B7FCB59F3B77622F",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -21,
+            "y": 14
+          },
+          "source_bounds": {
+            "left": 96,
+            "top": 35,
+            "width": 446,
+            "height": 444
+          },
+          "runtime_bounds": {
+            "left": 53,
+            "top": 104,
+            "width": 378,
+            "height": 377
+          },
+          "visible_pixels": 76551,
+          "transparent_pixels": 185593
+        },
+        {
+          "index": 5,
+          "file": "hair/005.png",
+          "mapping": "rest",
+          "sha256": "D104B82010978E673391FDD769ED9C350915EB23A15726F840A5E3121569F80D",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 9,
+            "y": 14
+          },
+          "source_bounds": {
+            "left": 67,
+            "top": 40,
+            "width": 444,
+            "height": 439
+          },
+          "runtime_bounds": {
+            "left": 54,
+            "top": 110,
+            "width": 377,
+            "height": 371
+          },
+          "visible_pixels": 73371,
+          "transparent_pixels": 188773
+        }
+      ]
+    },
+    {
+      "kind": "preen",
+      "source_file": "source/preen.png",
+      "source_sha256": "6E0A4888BA63E8B1263E1981845975001C849871A111870012990DF069DF579C",
+      "prompt": "source/preen.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.7698574,
+      "shared_crop": {
+        "left": 35,
+        "top": 33,
+        "width": 491,
+        "height": 462
+      },
+      "shared_registration": {
+        "left": 53,
+        "top": 125.325867,
+        "width": 378,
+        "height": 355.674133,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 53,
+        "top": 96,
+        "width": 378,
+        "height": 385
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": false,
+      "mirrored_source_frame_indices": [],
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 784867,
+        "removedLowCoveragePixels": 83743
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 701124
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "preen/000.png",
+          "mapping": "standing",
+          "sha256": "70F5D91C673F6EBDFE0265227C7A01E3C82DDE93D36335E31AC35FC80B93FDC2",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 35,
+            "top": 34,
+            "width": 491,
+            "height": 461
+          },
+          "runtime_bounds": {
+            "left": 53,
+            "top": 126,
+            "width": 378,
+            "height": 355
+          },
+          "visible_pixels": 66837,
+          "transparent_pixels": 195307
+        },
+        {
+          "index": 1,
+          "file": "preen/001.png",
+          "mapping": "open-wing",
+          "sha256": "C0C4161599B7ED54CA1138C53B3477B6D1BA9C739239963DA2405905DBC89C85",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 13,
+            "y": 1
+          },
+          "source_bounds": {
+            "left": 29,
+            "top": 36,
+            "width": 478,
+            "height": 458
+          },
+          "runtime_bounds": {
+            "left": 58,
+            "top": 129,
+            "width": 368,
+            "height": 352
+          },
+          "visible_pixels": 68807,
+          "transparent_pixels": 193337
+        },
+        {
+          "index": 2,
+          "file": "preen/002.png",
+          "mapping": "groom-feathers",
+          "sha256": "285A366B21CA0F8944CFD335B49699FDE22A0E8681B7C13F60F90326389A3E85",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 12,
+            "y": 1
+          },
+          "source_bounds": {
+            "left": 40,
+            "top": 36,
+            "width": 457,
+            "height": 458
+          },
+          "runtime_bounds": {
+            "left": 66,
+            "top": 129,
+            "width": 353,
+            "height": 352
+          },
+          "visible_pixels": 70564,
+          "transparent_pixels": 191580
+        },
+        {
+          "index": 3,
+          "file": "preen/003.png",
+          "mapping": "contented-groom",
+          "sha256": "44C2FD8144EE6BC0CF5249D48147011082AD4820C10423425BD702D5A5F5BCB6",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -9,
+            "y": 17
+          },
+          "source_bounds": {
+            "left": 55,
+            "top": 20,
+            "width": 468,
+            "height": 458
+          },
+          "runtime_bounds": {
+            "left": 62,
+            "top": 129,
+            "width": 360,
+            "height": 351
+          },
+          "visible_pixels": 71206,
+          "transparent_pixels": 190938
+        },
+        {
+          "index": 4,
+          "file": "preen/004.png",
+          "mapping": "fold-wing",
+          "sha256": "E32D65961670A4D34548CDAEF5C50DB0201F1E070ADC85FAF4379CC0241CDD3D",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 14,
+            "y": 17
+          },
+          "source_bounds": {
+            "left": 24,
+            "top": 16,
+            "width": 485,
+            "height": 462
+          },
+          "runtime_bounds": {
+            "left": 55,
+            "top": 125,
+            "width": 374,
+            "height": 355
+          },
+          "visible_pixels": 66753,
+          "transparent_pixels": 195391
+        },
+        {
+          "index": 5,
+          "file": "preen/005.png",
+          "mapping": "rest",
+          "sha256": "DE4D3A334E1EF84C065ACD823C796C8FA8FE5CCC725221D61CE986157B7E50D4",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 21,
+            "y": 18
+          },
+          "source_bounds": {
+            "left": 17,
+            "top": 16,
+            "width": 486,
+            "height": 461
+          },
+          "runtime_bounds": {
+            "left": 55,
+            "top": 127,
+            "width": 375,
+            "height": 353
+          },
+          "visible_pixels": 66455,
+          "transparent_pixels": 195689
+        }
+      ]
+    },
+    {
+      "kind": "proud",
+      "source_file": "source/proud.png",
+      "source_sha256": "B4220D31311A75D814816380402DBDE129730C7F8724D757598040F22879D20E",
+      "prompt": "source/proud.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.790794969,
+      "shared_crop": {
+        "left": 52,
+        "top": 22,
+        "width": 478,
+        "height": 477
+      },
+      "shared_registration": {
+        "left": 53,
+        "top": 103.7908,
+        "width": 378,
+        "height": 377.2092,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 53,
+        "top": 96,
+        "width": 378,
+        "height": 385
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": false,
+      "mirrored_source_frame_indices": [
+        2,
+        3
+      ],
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 644981,
+        "removedLowCoveragePixels": 34704
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 610277
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "proud/000.png",
+          "mapping": "standing",
+          "sha256": "5EE128F11B49BE1E4864D71EC1CFF40861C3A8BBAADD454DF9935BAB5A7DEBC0",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 52,
+            "top": 32,
+            "width": 478,
+            "height": 467
+          },
+          "runtime_bounds": {
+            "left": 53,
+            "top": 112,
+            "width": 378,
+            "height": 368
+          },
+          "visible_pixels": 69863,
+          "transparent_pixels": 192281
+        },
+        {
+          "index": 1,
+          "file": "proud/001.png",
+          "mapping": "raise-forehooves",
+          "sha256": "FC53E632A73CD960E55EF9FDDB5AA76B283941E1658480D68B9BCE905AAAD5C9",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -29,
+            "y": 2
+          },
+          "source_bounds": {
+            "left": 112,
+            "top": 31,
+            "width": 415,
+            "height": 466
+          },
+          "runtime_bounds": {
+            "left": 77,
+            "top": 113,
+            "width": 329,
+            "height": 368
+          },
+          "visible_pixels": 61263,
+          "transparent_pixels": 200881
+        },
+        {
+          "index": 2,
+          "file": "proud/002.png",
+          "mapping": "sit",
+          "sha256": "A91463F9867A9B09CABA79B28E15DA896AB9943BF93741934BAE71551646901C",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 42,
+            "y": -3
+          },
+          "source_bounds": {
+            "left": 79,
+            "top": 25,
+            "width": 341,
+            "height": 477
+          },
+          "runtime_bounds": {
+            "left": 106,
+            "top": 104,
+            "width": 270,
+            "height": 377
+          },
+          "visible_pixels": 57875,
+          "transparent_pixels": 204269
+        },
+        {
+          "index": 3,
+          "file": "proud/003.png",
+          "mapping": "cross-forelegs",
+          "sha256": "A7B386ACC4BDB0A77E492817A96D6DFBC47EAC0B9E0168DA8818FE8A86CC9F1B",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 37,
+            "y": 20
+          },
+          "source_bounds": {
+            "left": 82,
+            "top": 19,
+            "width": 345,
+            "height": 460
+          },
+          "runtime_bounds": {
+            "left": 106,
+            "top": 118,
+            "width": 272,
+            "height": 363
+          },
+          "visible_pixels": 54612,
+          "transparent_pixels": 207532
+        },
+        {
+          "index": 4,
+          "file": "proud/004.png",
+          "mapping": "stand-up",
+          "sha256": "2920688EB97CF40F1DF238DC9C5F68913FC036CADC87C77A30CD6F728A20298C",
+          "mirrored": false,
+          "integer_translation": {
+            "x": -16,
+            "y": 23
+          },
+          "source_bounds": {
+            "left": 68,
+            "top": 47,
+            "width": 477,
+            "height": 429
+          },
+          "runtime_bounds": {
+            "left": 53,
+            "top": 143,
+            "width": 378,
+            "height": 338
+          },
+          "visible_pixels": 66102,
+          "transparent_pixels": 196042
+        },
+        {
+          "index": 5,
+          "file": "proud/005.png",
+          "mapping": "rest",
+          "sha256": "8989D46BBB80CF6E01D80AB51E5C783C13BA77ECFD565F0CE7AC32482738B528",
+          "mirrored": false,
+          "integer_translation": {
+            "x": 1,
+            "y": 14
+          },
+          "source_bounds": {
+            "left": 68,
+            "top": 19,
+            "width": 444,
+            "height": 466
+          },
+          "runtime_bounds": {
+            "left": 66,
+            "top": 113,
+            "width": 352,
+            "height": 368
+          },
+          "visible_pixels": 67604,
+          "transparent_pixels": 194540
+        }
+      ]
+    },
+    {
+      "kind": "gaze-idle",
+      "source_file": "source/gaze-idle.png",
+      "source_sha256": "6C8A8F4D8D85DAD4A705C513849F26A703AE223E1A9BE09F8551676B920DA50C",
+      "prompt": "source/gaze-idle.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.75149107,
+      "shared_crop": {
+        "left": 9,
+        "top": 28,
+        "width": 503,
+        "height": 470
+      },
+      "shared_registration": {
+        "left": 53,
+        "top": 127.799194,
+        "width": 378,
+        "height": 353.2008,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 53,
+        "top": 96,
+        "width": 378,
+        "height": 385
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": true,
+      "mirrored_source_frame_indices": [],
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 725630,
+        "removedLowCoveragePixels": 32283
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 693347
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "gaze-idle/000.png",
+          "mapping": "baseline",
+          "sha256": "C9302B2A8B4B16205FD0C95EA0DB637CB450E081C845BACD63683025E37170B7",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 18,
+            "top": 29,
+            "width": 484,
+            "height": 469
+          },
+          "runtime_bounds": {
+            "left": 60,
+            "top": 129,
+            "width": 365,
+            "height": 352
+          },
+          "visible_pixels": 64329,
+          "transparent_pixels": 197815
+        },
+        {
+          "index": 1,
+          "file": "gaze-idle/001.png",
+          "mapping": "eyes-left",
+          "sha256": "6F54BD7510507E9632347D9EBC6BA9969F9162172BF6132211E1476FE3A10B0B",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 18,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 1,
+            "top": 30,
+            "width": 483,
+            "height": 468
+          },
+          "runtime_bounds": {
+            "left": 60,
+            "top": 130,
+            "width": 364,
+            "height": 351
+          },
+          "visible_pixels": 64079,
+          "transparent_pixels": 198065
+        },
+        {
+          "index": 2,
+          "file": "gaze-idle/002.png",
+          "mapping": "head-left",
+          "sha256": "24A6191ED0661077B7D7C2E11CF4575B6D79E1AA84C4DBE47D367FA8B21640BD",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 15,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 1,
+            "top": 30,
+            "width": 489,
+            "height": 468
+          },
+          "runtime_bounds": {
+            "left": 58,
+            "top": 130,
+            "width": 368,
+            "height": 351
+          },
+          "visible_pixels": 64001,
+          "transparent_pixels": 198143
+        },
+        {
+          "index": 3,
+          "file": "gaze-idle/003.png",
+          "mapping": "eyes-right",
+          "sha256": "C63590B03CCCFF2444AA8E122FF6C491300D9561E3A81A56F3850EC7E6261D4E",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 1,
+            "y": 14
+          },
+          "source_bounds": {
+            "left": 17,
+            "top": 14,
+            "width": 485,
+            "height": 470
+          },
+          "runtime_bounds": {
+            "left": 59,
+            "top": 129,
+            "width": 365,
+            "height": 351
+          },
+          "visible_pixels": 64341,
+          "transparent_pixels": 197803
+        },
+        {
+          "index": 4,
+          "file": "gaze-idle/004.png",
+          "mapping": "head-right",
+          "sha256": "C6503164A65B77DA62AF80E938F77B5B93024D9F3884DCEAC60C995A3F0BA232",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 9,
+            "y": 15
+          },
+          "source_bounds": {
+            "left": 0,
+            "top": 17,
+            "width": 503,
+            "height": 466
+          },
+          "runtime_bounds": {
+            "left": 53,
+            "top": 131,
+            "width": 378,
+            "height": 350
+          },
+          "visible_pixels": 64697,
+          "transparent_pixels": 197447
+        },
+        {
+          "index": 5,
+          "file": "gaze-idle/005.png",
+          "mapping": "return",
+          "sha256": "F8CE8404A58212FC68BAD04B9F345B56AF0CCA1A2BE827F0BBEB7D4AD186E080",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 10,
+            "y": 15
+          },
+          "source_bounds": {
+            "left": 7,
+            "top": 14,
+            "width": 486,
+            "height": 469
+          },
+          "runtime_bounds": {
+            "left": 59,
+            "top": 129,
+            "width": 366,
+            "height": 352
+          },
+          "visible_pixels": 65186,
+          "transparent_pixels": 196958
+        }
+      ]
+    },
+    {
+      "kind": "gaze-working",
+      "source_file": "source/gaze-working.png",
+      "source_sha256": "F64E395C70DB006992F37D0DD959E6934276C70BD20AFB105FE6CDE1FDD9C9E2",
+      "prompt": "source/gaze-working.prompt.txt",
+      "source_width": 1536,
+      "source_height": 1024,
+      "source_grid": [
+        3,
+        2
+      ],
+      "authored_key_poses": 6,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "runtime_faces": "left except frontal dock top/bottom",
+      "shared_scale": 0.756410241,
+      "shared_crop": {
+        "left": 85,
+        "top": 34,
+        "width": 440,
+        "height": 468
+      },
+      "shared_registration": {
+        "left": 89.58975,
+        "top": 130,
+        "width": 332.8205,
+        "height": 354,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 88,
+        "top": 130,
+        "width": 336,
+        "height": 354
+      },
+      "integer_translation_alignment": true,
+      "mirror_all": true,
+      "mirrored_source_frame_indices": [],
+      "matte_extraction": {
+        "coreAlpha": 200,
+        "edgeRadius": 2,
+        "originalVisiblePixels": 766712,
+        "removedLowCoveragePixels": 53859
+      },
+      "island_filter": {
+        "maximumFractionOfLargest": 0.01,
+        "minimumGapPixels": 4,
+        "removedComponents": 0,
+        "largestRemovedComponentPixels": 0,
+        "removedPixels": 0,
+        "retainedPixels": 712853
+      },
+      "frames": [
+        {
+          "index": 0,
+          "file": "gaze-working/000.png",
+          "mapping": "reading",
+          "sha256": "A16C9082B802FE815DA993C4338273365A00199140B7D5346CEDD6D38BAFA789",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 44,
+            "width": 440,
+            "height": 458
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 138,
+            "width": 332,
+            "height": 346
+          },
+          "visible_pixels": 66852,
+          "transparent_pixels": 195292
+        },
+        {
+          "index": 1,
+          "file": "gaze-working/001.png",
+          "mapping": "eyes-left",
+          "sha256": "898917492F5705E8B7F60E22B09442C2D10AF81C6420C609F922978B2AF1AB50",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 0,
+            "y": -3
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 43,
+            "width": 440,
+            "height": 462
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 135,
+            "width": 332,
+            "height": 349
+          },
+          "visible_pixels": 67173,
+          "transparent_pixels": 194971
+        },
+        {
+          "index": 2,
+          "file": "gaze-working/002.png",
+          "mapping": "head-left",
+          "sha256": "95A6E359E24F5438D89BBFB5AE08BD268D2BC3A43470C22A9ED8677495EC4769",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 7,
+            "y": -1
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 35,
+            "width": 427,
+            "height": 468
+          },
+          "runtime_bounds": {
+            "left": 94,
+            "top": 130,
+            "width": 324,
+            "height": 354
+          },
+          "visible_pixels": 67356,
+          "transparent_pixels": 194788
+        },
+        {
+          "index": 3,
+          "file": "gaze-working/003.png",
+          "mapping": "eyes-right",
+          "sha256": "DB00C277CDFE54BD61EC3443E4E26B71F5F9898FE6B0AF650201A7F6963145B2",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 38,
+            "width": 440,
+            "height": 464
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 134,
+            "width": 332,
+            "height": 350
+          },
+          "visible_pixels": 67564,
+          "transparent_pixels": 194580
+        },
+        {
+          "index": 4,
+          "file": "gaze-working/004.png",
+          "mapping": "head-right",
+          "sha256": "D8302E4B17528A87996C704477CC8075192D93117A469B8248AD53EFA37443E3",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 0,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 35,
+            "width": 440,
+            "height": 467
+          },
+          "runtime_bounds": {
+            "left": 90,
+            "top": 130,
+            "width": 332,
+            "height": 354
+          },
+          "visible_pixels": 67824,
+          "transparent_pixels": 194320
+        },
+        {
+          "index": 5,
+          "file": "gaze-working/005.png",
+          "mapping": "return-reading",
+          "sha256": "855D80E9A0DD0C78AD8AC5C117EEE9F75D2EFC9AB853F19A57845B81FC49B85A",
+          "mirrored": true,
+          "integer_translation": {
+            "x": 7,
+            "y": 0
+          },
+          "source_bounds": {
+            "left": 85,
+            "top": 38,
+            "width": 427,
+            "height": 464
+          },
+          "runtime_bounds": {
+            "left": 94,
+            "top": 134,
+            "width": 324,
+            "height": 350
+          },
+          "visible_pixels": 67321,
+          "transparent_pixels": 194823
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,643 @@
+{
+  "version": 3,
+  "name": "Rainbow Dash awake / fall asleep / wake up",
+  "description_zh": "清醒待机直接站立、无云；困倦时云逐渐托起，睡眠保留云朵，醒来起身后云渐退。",
+  "runtime_frame_count": 18,
+  "unique_runtime_images": 15,
+  "new_processed_authored_images": 14,
+  "endpoint_copy_entries": 4,
+  "canvas": [
+    512,
+    512
+  ],
+  "orientation": {
+    "source": "right",
+    "runtime_default": "left",
+    "application_mirrors_whole_canvas": true
+  },
+  "registration": {
+    "target_standing_hoof_bottom_y": 480,
+    "standing_reference": "../frames/received/000.png",
+    "standing_reference_head_top_y": 94,
+    "target_cloud_bottom_y": 482,
+    "validation_bottom_tolerance": [
+      476,
+      484
+    ],
+    "method": "Single isotropic scale per source group. Integer whole-cel translations align silhouette ground. Awake is registered by hoof baseline, not cloud. Bridge preserves authored cloud emergence and disappearance. No per-frame fit or redrawing.",
+    "cloud_guide": "No cloud required or used for standing registration. White pixels below y400 confirm the awake pose has no ground cloud, excluding the tiny flank emblem. Bridge cloud measurement uses y330.",
+    "matte": "Alpha >=200 core retains original source pixels in a two-pixel neighborhood; no RGB repaint.",
+    "endpoint_exception": "Four runtime entries are byte-identical copies of the relaxed awake and original sleep endpoints."
+  },
+  "relaxed_awake_endpoint": "awake-idle/000.png",
+  "original_sleep_endpoint": "../frames/idle/000.png",
+  "original_sleep_sha256": "366e6e2ee27a5e206698b96f3c8a0489e171d0629eb3d366a337fd02123163b6",
+  "standing_reference_sha256": "16a7eae5907a5d59764f2a5b8a4bce221d470f8cff5808287bcee645bd1bb2b4",
+  "source_sheets": {
+    "awake-idle": {
+      "file": "source/awake-idle.source.png",
+      "sha256": "467e3fc53eed14850926f9632d47364e8cc43f4edb6dd9579ff1710b8890e2e6",
+      "prompt_file": "source/awake-idle.prompt.txt",
+      "prompt_sha256": "5d81fe8b58300d68c9514547ead2a16be13bde52cf95585be178e72d434d48f9",
+      "width": 1536,
+      "height": 1024,
+      "grid_columns": 3,
+      "grid_rows": 2,
+      "origin": "Newly generated show-inspired cartoon key cels; not source-video footage.",
+      "retained_authored_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reference_images": [
+        {
+          "file": "source/reference-previous-awake-cloud.png",
+          "sha256": "cfad610392f3d2ed2a425bac466630d2993944371b1a6e777207ad5300afd8f8"
+        },
+        {
+          "file": "../frames/received/000.png",
+          "sha256": "16a7eae5907a5d59764f2a5b8a4bce221d470f8cff5808287bcee645bd1bb2b4"
+        }
+      ]
+    },
+    "fall-asleep": {
+      "file": "source/fall-asleep.source.png",
+      "sha256": "ae8741f85e2a6b3e34e34af6d594dcd288ed8cc511e10d51da3040309f768548",
+      "prompt_file": "source/fall-asleep.prompt.txt",
+      "prompt_sha256": "e2a490e94d9640c0f7f9a60cfb2caffe5f6f9df1f6668e0714d0f287503e4082",
+      "width": 1536,
+      "height": 1024,
+      "grid_columns": 3,
+      "grid_rows": 2,
+      "origin": "Newly generated show-inspired cartoon key cels; not source-video footage.",
+      "retained_authored_frames": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reference_images": [
+        {
+          "file": "source/reference-generated-standing-000.png",
+          "sha256": "3f1ed17b848b071fb82db2802e27d5416f11b1420125832ed1866c10e273a1ff"
+        },
+        {
+          "file": "../frames/idle/000.png",
+          "sha256": "366e6e2ee27a5e206698b96f3c8a0489e171d0629eb3d366a337fd02123163b6"
+        }
+      ]
+    },
+    "wake-up": {
+      "file": "source/wake-up.source.png",
+      "sha256": "71e01b6275632920eded486f8f674a39ca6a26a4def9429f54fd47f86609234e",
+      "prompt_file": "source/wake-up.prompt.txt",
+      "prompt_sha256": "7c98c09e0e976c6bd3fe7df59a42b4ae0e7ff4efed9f0ce0ecb295b64bc7d445",
+      "width": 1536,
+      "height": 1024,
+      "grid_columns": 3,
+      "grid_rows": 2,
+      "origin": "Newly generated show-inspired cartoon key cels; not source-video footage.",
+      "retained_authored_frames": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reference_images": [
+        {
+          "file": "source/reference-generated-standing-000.png",
+          "sha256": "3f1ed17b848b071fb82db2802e27d5416f11b1420125832ed1866c10e273a1ff"
+        },
+        {
+          "file": "../frames/idle/000.png",
+          "sha256": "366e6e2ee27a5e206698b96f3c8a0489e171d0629eb3d366a337fd02123163b6"
+        }
+      ]
+    }
+  },
+  "clips": {
+    "awake-idle": {
+      "runtime_frames": 6,
+      "shared_generated_scale": 0.846827149,
+      "shared_generated_crop": {
+        "left": 30,
+        "top": 37,
+        "width": 462,
+        "height": 457
+      },
+      "shared_generated_registration": {
+        "left": 76.3829346,
+        "top": 94,
+        "width": 391.234131,
+        "height": 387,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 72,
+        "top": 94,
+        "width": 400,
+        "height": 387
+      },
+      "source_assembly_report": "source/awake-idle.assembly.json",
+      "assembly_report_precedes_endpoint_copies": true,
+      "frame_mapping": [
+        {
+          "index": 0,
+          "file": "awake-idle/000.png",
+          "sha256": "3f1ed17b848b071fb82db2802e27d5416f11b1420125832ed1866c10e273a1ff",
+          "source_frame": 0,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 78,
+            "top": 95,
+            "width": 387,
+            "height": 386
+          },
+          "ground_bottom": 480,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 1,
+          "file": "awake-idle/001.png",
+          "sha256": "9f5831993834005725131d1f9ad196e7f0c55ff9735da61790e7ac9d163baa8c",
+          "source_frame": 1,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 80,
+            "top": 96,
+            "width": 384,
+            "height": 385
+          },
+          "ground_bottom": 480,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 2,
+          "file": "awake-idle/002.png",
+          "sha256": "f772e2a295c6a90458fc2ad9f47e4ad546465e5d3ff574c778703584c1f33b6d",
+          "source_frame": 2,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 77,
+            "top": 94,
+            "width": 390,
+            "height": 386
+          },
+          "ground_bottom": 479,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 3,
+          "file": "awake-idle/003.png",
+          "sha256": "d7eb7d98619506cd0344dec9e0e2da0170b8d1d76e76893bfcebde59f98325cf",
+          "source_frame": 3,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 76,
+            "top": 97,
+            "width": 391,
+            "height": 383
+          },
+          "ground_bottom": 479,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 4,
+          "file": "awake-idle/004.png",
+          "sha256": "639358a2eabf7e977ce1eb38a731080a55fddc7e74fb6a49d23df56197b11c76",
+          "source_frame": 4,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 79,
+            "top": 99,
+            "width": 385,
+            "height": 381
+          },
+          "ground_bottom": 479,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 5,
+          "file": "awake-idle/005.png",
+          "sha256": "600018f0f58538c0241688920c34cbbcbcfe28738c0885f3d796bef5a0a8a34e",
+          "source_frame": 5,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 77,
+            "top": 99,
+            "width": 389,
+            "height": 381
+          },
+          "ground_bottom": 479,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        }
+      ]
+    },
+    "fall-asleep": {
+      "runtime_frames": 6,
+      "shared_generated_scale": 0.8303393,
+      "shared_generated_crop": {
+        "left": -9,
+        "top": 71,
+        "width": 501,
+        "height": 432
+      },
+      "shared_generated_registration": {
+        "left": 48,
+        "top": 124.293427,
+        "width": 416,
+        "height": 358.706573,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 48,
+        "top": 94,
+        "width": 416,
+        "height": 389
+      },
+      "source_assembly_report": "source/fall-asleep.assembly.json",
+      "assembly_report_precedes_endpoint_copies": true,
+      "frame_mapping": [
+        {
+          "index": 0,
+          "file": "fall-asleep/000.png",
+          "sha256": "3f1ed17b848b071fb82db2802e27d5416f11b1420125832ed1866c10e273a1ff",
+          "source_frame": null,
+          "byte_identical_endpoint_copy": "awake-idle/000.png",
+          "opaque_bounds_alpha_above_24": {
+            "left": 78,
+            "top": 95,
+            "width": 387,
+            "height": 386
+          },
+          "ground_bottom": 480,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        },
+        {
+          "index": 1,
+          "file": "fall-asleep/001.png",
+          "sha256": "fb81540c89151b1136b209cdacbf2dd0c72f3d658e2c494edeb3868458231f96",
+          "source_frame": 1,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 49,
+            "top": 166,
+            "width": 414,
+            "height": 317
+          },
+          "ground_bottom": 482,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 4416,
+            "left": 138,
+            "right": 417,
+            "bottom": 478,
+            "centerX": 277.5,
+            "width": 280
+          }
+        },
+        {
+          "index": 2,
+          "file": "fall-asleep/002.png",
+          "sha256": "891b199880a397bfd1f43c3752561d6c0ee67ef01c8d98a6b0fee1bffc3863ae",
+          "source_frame": 2,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 51,
+            "top": 196,
+            "width": 411,
+            "height": 286
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 14775,
+            "left": 97,
+            "right": 447,
+            "bottom": 476,
+            "centerX": 272,
+            "width": 351
+          }
+        },
+        {
+          "index": 3,
+          "file": "fall-asleep/003.png",
+          "sha256": "27d9134a37b523c877052ba8b95b115bf2cc9f41d04560abbe06f960280b119e",
+          "source_frame": 3,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 52,
+            "top": 168,
+            "width": 408,
+            "height": 314
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 19794,
+            "left": 57,
+            "right": 454,
+            "bottom": 476,
+            "centerX": 255.5,
+            "width": 398
+          }
+        },
+        {
+          "index": 4,
+          "file": "fall-asleep/004.png",
+          "sha256": "1b27854f2b6f11694ce004cc8b0b92957390ce54f354a22ce7e77916d14100ee",
+          "source_frame": 4,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 49,
+            "top": 204,
+            "width": 414,
+            "height": 279
+          },
+          "ground_bottom": 482,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 24158,
+            "left": 54,
+            "right": 457,
+            "bottom": 477,
+            "centerX": 255.5,
+            "width": 404
+          }
+        },
+        {
+          "index": 5,
+          "file": "fall-asleep/005.png",
+          "sha256": "366e6e2ee27a5e206698b96f3c8a0489e171d0629eb3d366a337fd02123163b6",
+          "source_frame": null,
+          "byte_identical_endpoint_copy": "../frames/idle/000.png",
+          "opaque_bounds_alpha_above_24": {
+            "left": 63,
+            "top": 251,
+            "width": 385,
+            "height": 231
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 20172,
+            "left": 70,
+            "right": 443,
+            "bottom": 476,
+            "centerX": 256.5,
+            "width": 374
+          }
+        }
+      ]
+    },
+    "wake-up": {
+      "runtime_frames": 6,
+      "shared_generated_scale": 0.8455285,
+      "shared_generated_crop": {
+        "left": 18,
+        "top": 49,
+        "width": 492,
+        "height": 431
+      },
+      "shared_generated_registration": {
+        "left": 48,
+        "top": 118.577209,
+        "width": 416,
+        "height": 364.4228,
+        "padding": 0
+      },
+      "target_box": {
+        "left": 48,
+        "top": 94,
+        "width": 416,
+        "height": 389
+      },
+      "source_assembly_report": "source/wake-up.assembly.json",
+      "assembly_report_precedes_endpoint_copies": true,
+      "frame_mapping": [
+        {
+          "index": 0,
+          "file": "wake-up/000.png",
+          "sha256": "366e6e2ee27a5e206698b96f3c8a0489e171d0629eb3d366a337fd02123163b6",
+          "source_frame": null,
+          "byte_identical_endpoint_copy": "../frames/idle/000.png",
+          "opaque_bounds_alpha_above_24": {
+            "left": 63,
+            "top": 251,
+            "width": 385,
+            "height": 231
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 20172,
+            "left": 70,
+            "right": 443,
+            "bottom": 476,
+            "centerX": 256.5,
+            "width": 374
+          }
+        },
+        {
+          "index": 1,
+          "file": "wake-up/001.png",
+          "sha256": "b24022ee485f432533dca6b3a40b860476cab3d2e309083e14a30a9affa0ac5d",
+          "source_frame": 1,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 53,
+            "top": 222,
+            "width": 406,
+            "height": 260
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 22528,
+            "left": 62,
+            "right": 453,
+            "bottom": 476,
+            "centerX": 257.5,
+            "width": 392
+          }
+        },
+        {
+          "index": 2,
+          "file": "wake-up/002.png",
+          "sha256": "89da50e90fe6a3a977c072a5f4005b7632913182f3fb3bb8f5f21bc9bf1574de",
+          "source_frame": 2,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 53,
+            "top": 143,
+            "width": 407,
+            "height": 339
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 13384,
+            "left": 149,
+            "right": 453,
+            "bottom": 476,
+            "centerX": 301,
+            "width": 305
+          }
+        },
+        {
+          "index": 3,
+          "file": "wake-up/003.png",
+          "sha256": "30ff4003e6a028088fbd8468c6664e85876289fac537dd3be2683b9c3da51d40",
+          "source_frame": 3,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 50,
+            "top": 124,
+            "width": 412,
+            "height": 359
+          },
+          "ground_bottom": 482,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 11251,
+            "left": 105,
+            "right": 435,
+            "bottom": 476,
+            "centerX": 270,
+            "width": 331
+          }
+        },
+        {
+          "index": 4,
+          "file": "wake-up/004.png",
+          "sha256": "04d7893e6b0ade3c1149ac8a7b1b3892a9af972af077d439b0e88710b93b9e9a",
+          "source_frame": 4,
+          "byte_identical_endpoint_copy": null,
+          "opaque_bounds_alpha_above_24": {
+            "left": 56,
+            "top": 125,
+            "width": 400,
+            "height": 357
+          },
+          "ground_bottom": 481,
+          "standing_without_cloud": false,
+          "cloud_white_measurement": {
+            "present": true,
+            "pixels": 954,
+            "left": 144,
+            "right": 441,
+            "bottom": 467,
+            "centerX": 292.5,
+            "width": 298
+          }
+        },
+        {
+          "index": 5,
+          "file": "wake-up/005.png",
+          "sha256": "3f1ed17b848b071fb82db2802e27d5416f11b1420125832ed1866c10e273a1ff",
+          "source_frame": null,
+          "byte_identical_endpoint_copy": "awake-idle/000.png",
+          "opaque_bounds_alpha_above_24": {
+            "left": 78,
+            "top": 95,
+            "width": 387,
+            "height": 386
+          },
+          "ground_bottom": 480,
+          "standing_without_cloud": true,
+          "cloud_white_measurement": {
+            "present": false,
+            "pixels": 0,
+            "left": -1,
+            "right": -1,
+            "bottom": -1,
+            "centerX": null,
+            "width": 0
+          }
+        }
+      ]
+    }
+  },
+  "evidence": {
+    "assembler_regression_checks": 140,
+    "final_runtime_asset_checks": 113,
+    "gif_frames": 12,
+    "gif_duration_centiseconds": 514,
+    "gif_delay_redecoded": true
+  }
+}

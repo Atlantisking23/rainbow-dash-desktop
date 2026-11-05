@@ -1,0 +1,54 @@
+[
+  {
+    "exit_code": 0,
+    "suite": "TelemetryTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "LiveQuotaTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "PlaybackTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "EdgeDockingTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "EdgeUiTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "CompanionPoliciesTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "EnhancedUiTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "RestPolicyTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "RestUiTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "SpriteAppearanceTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "SpritePresentationTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "PetControlsTests"
+  },
+  {
+    "exit_code": 0,
+    "suite": "QuotaAndCadenceTests"
+  }
+]

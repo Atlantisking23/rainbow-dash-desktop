@@ -1,0 +1,144 @@
+{
+  "received": {
+    "natural_playback": {
+      "mode": "once",
+      "grounded": true,
+      "hold_frame": 5,
+      "frame_delays_ms": [
+        140,
+        180,
+        70,
+        150,
+        110,
+        500
+      ]
+    }
+  },
+  "working": {
+    "natural_playback": {
+      "mode": "quiet",
+      "grounded": true,
+      "rest_frame": 5,
+      "rest_frames": [
+        5,
+        0,
+        4
+      ],
+      "blink_frames": [
+        1,
+        2,
+        3
+      ],
+      "blink_delays_ms": [
+        35,
+        45,
+        65
+      ],
+      "blink_min_ms": 3000,
+      "blink_max_ms": 5000,
+      "action_frames": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "action_delays_ms": [
+        55,
+        55,
+        55,
+        55,
+        70,
+        70,
+        90,
+        130,
+        130,
+        100,
+        55,
+        55,
+        55,
+        55,
+        55,
+        100
+      ],
+      "action_initial_min_ms": 3500,
+      "action_initial_max_ms": 5500,
+      "action_min_ms": 9000,
+      "action_max_ms": 14000
+    }
+  },
+  "interrupted": {
+    "natural_playback": {
+      "mode": "once",
+      "grounded": true,
+      "hold_frame": 5,
+      "frame_delays_ms": [
+        100,
+        100,
+        180,
+        250,
+        70,
+        650
+      ]
+    }
+  },
+  "completed": {
+    "natural_playback": {
+      "mode": "once",
+      "grounded": true,
+      "hold_frame": 5,
+      "frame_delays_ms": [
+        120,
+        90,
+        220,
+        260,
+        240,
+        650
+      ]
+    }
+  },
+  "idle": {
+    "natural_playback": {
+      "mode": "loop",
+      "grounded": true,
+      "loop_start_frame": 0,
+      "loop_end_frame": 5,
+      "blink_frames": [],
+      "frame_delays_ms": [
+        850,
+        700,
+        650,
+        750,
+        900,
+        1150
+      ]
+    }
+  },
+  "waiting": {
+    "natural_playback": {
+      "mode": "hold",
+      "grounded": true,
+      "hold_frame": 5,
+      "rest_frame": 5
+    }
+  },
+  "error": {
+    "natural_playback": {
+      "mode": "hold",
+      "grounded": true,
+      "hold_frame": 5,
+      "rest_frame": 5
+    }
+  }
+}

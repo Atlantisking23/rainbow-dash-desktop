@@ -1,0 +1,12 @@
+Use case: precise-object-edit
+Asset type: six-cel desktop animation sprite sheet, 3 columns x 2 rows, true transparent alpha.
+Input images: Image 1 is the edit target six-frame standing-on-cloud sheet. Image 2 is the exact existing G4 Rainbow Dash standing character that this pet's other animations use.
+Primary request: Remove ALL clouds from all six frames of image 1. Reconstruct each as the same naturally STANDING pony alone on a transparent empty canvas, no pedestal. Match the pony shape, adult G4 proportions, scale and upright four-hoof stance of image 2, including head size, forelegs/hooves fully drawn and cyan outline. Keep high-quality flat TV animation finish. Do not leave a cloud, puff, ground line, platform, drop shadow, white patch or pedestal anywhere. This is the everyday awake rest pose and must fit seamlessly with the second reference and the pet's other standing actions.
+Six cels in reading order:
+0 natural open magenta eyes, relaxed little confident smile; NOT drowsy, not half-lidded, not startled. Ears relaxed upright, wings folded, four hooves planted.
+1 identical registration, tiny ear motion, naturally open eyes.
+2 identical body, eyelids halfway closed for a blink.
+3 identical body, gently closed eyes only for brief blink, smile, no yawn.
+4 eyelids reopen fully to frame0.
+5 same as frame0 with only extremely subtle breathing, fully open eyes.
+Composition and invariants: Six equal square cells on 1536x1024 sheet, 3x2. Fixed camera, identical scale, same pony location and hoof baseline in all six cells, NO floating. Full pony including mane and rainbow tail wholly contained with transparent margins. Target each cell: top of mane about y90/512, all planted hoof bottoms about y480/512, pony overall about380 high, full width about380. Face screen RIGHT in every cel; app will mirror to left. Keep exactly four legs, two folded wings, correct rainbow mane/tail colors/order, blue coat/cyan clean outlines, magenta eyes, flank cloud+rainbow-lightning cutie mark (the SMALL flank emblem is allowed and must remain, but no big external cloud). No text, grid lines, numbers, watermarks, glow, blur, scenery, pixel art or 3D. Genuine transparency.

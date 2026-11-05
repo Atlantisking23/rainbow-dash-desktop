@@ -1,0 +1,10 @@
+Production transparent PNG animation sprite sheet for G4 My Little Pony Rainbow Dash. SIX sequential key poses in a STRICT 3 column by 2 row grid, each cell approximately512x512, landscape1536x1024 overall. Genuine alpha background, no coloured background, checkerboard, halo or shadows. NO text, labels, numbers, gridlines, border, watermark, icons or UI. At least12px transparent separation between all poses; no connected characters across cells. Crisp high resolution smooth flat cel-art matching the approved reference: cyan pony, magenta eyes with natural eyelids, short equine muzzle, correctly layered rainbow forelock/mane/tail, medium-blue contour, no horn or fingers, no 3D/fur/pixel art/chibi. Same model proportions, fixed camera and common scale across6cels. Don't zoom each pose to fill its cell. Keep head scale and anchor fixed within sequences, preserve anatomy and antialiased transparent contour. Natural expressions: self-assured playful, relaxed eyelids not staring. No extra limbs or props. Each action reads as a continuous six-step sequence, row-major0..5. This is original production animation art, not copied show frames.
+
+READING POINTER-APPROACH GAZE: use seated pony/cloud/red open book reference, MIRROR reference whole composition to LEFT-facing ALL6. Same cloud bottom, book spine and forehooves fixed, no page turn in this clip. Six target cels:
+0 reading gaze down at page.
+1 eyes glance briefly LEFT while head/book/hooves remain unchanged.
+2 head lifts and follows leftward by5degrees, ear attentive, no startled wide eyes.
+3 head at baseline again, eyes glance RIGHT toward viewer.
+4 head follows rightward by5degrees, faint friendly small closed-mouth smile.
+5 head/eyes return DOWN to book, same as0.
+Keep irises naturally inside eyes, eyebrows relaxed, body/tail/cloud/book absolutely stable and same proportions across all6. Do not turn body, lift book or lose seated silhouette.

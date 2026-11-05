@@ -1,0 +1,16 @@
+Generate a production TRANSPARENT PNG SPRITE SHEET for an animation-quality G4 My Little Pony Rainbow Dash desktop companion. It is not a concept board or UI screenshot. Use reference ONLY for character identity and approved pose. Clean crisp flat 2D cel colours, smooth anti-aliased edges, medium blue contour, cyan coat, magenta eyes, layered accurate rainbow mane. High-resolution non-pixel art.
+Exactly NINE separate key cels in a REGULAR 3 COLUMN × 3 ROW grid, square overall 1536×1536 if possible, each virtual cell 512×512. Reading order row-major 0 to8. No text, labels, numbers, watermarks, grid, boundary lines, props, clouds, background shadows, checkerboard or glow. Genuine transparent alpha background. The nine characters must be separated by generous transparent gaps, at least16px clear gap around each virtual tile; no artwork can cross a tile. Do not draw any part of another pose in a tile.
+LOCK pose proportions, scale, location, attachment line and silhouette registration across all nine cells. The same head/muzzle/hoof position in every tile; only the facial expression and a small ear movement change. Do not vary camera angle, zoom, mane length, hoof placement or head rotation between cells. Keep eye outlines and iris proportions natural.
+Nine row-major expressions:
+0 relaxed baseline: gentle half-lidded eyes, tiny confident closed-mouth smile.
+1 new task: subtly alert ears and one lightly raised eyebrow; attentive eyes open a little more, not staring.
+2 working: focused eyes, neutral closed mouth, calm concentration.
+3 blink descending: upper eyelids more than halfway closed, same iris position, no smile change.
+4 complete blink: eyes fully closed as simple relaxed curved eyelid lines, same muzzle.
+5 blink reopening: eyes about half-open, transitions naturally back to0/2.
+6 completed: visibly different HAPPY closed curved eyes and a slightly broader self-assured smile, still closed-mouth.
+7 interruption: one eyebrow gently furrowed, one ear slightly relaxed, mild questioning expression, NOT panic, no huge eyes or open jaw.
+8 idle dozing: completely closed relaxed eyes and small peaceful closed-mouth smile, ears gently relaxed.
+Keep animation-worthy natural facial differences; don't make all eyes wide or all same expression. One coherent character model, exactly9 cels. Do not draw extra anatomy, fingers, horn, wings, full body, tail or floating detached limbs. No painterly textures, 3D or tiny chibi proportions.
+
+POSE / ATTACHMENT: match ONLY bottom-right pose from the reference, Rainbow Dash peeking UP over a HORIZONTAL BOTTOM screen edge. Strict FRONT-facing upright head with gentle symmetric features and a tiny playful smirk. Entire forehead, rainbow forelock, two ears, eyes, short muzzle and TWO small equine forehooves are visible ABOVE an imaginary horizontal lower attachment16px above each tile's bottom. Forehooves rest at this lower line, short neck ends flat there; body is hidden below and not drawn. The head and hooves occupy about360px width and300px height centred horizontally in each tile. Fixed lower attachment in all9cels. No frame, line, cloud, body, tail, floating severed head or human hands. Do not draw side-profile head. Full visible head with natural G4 proportions, no face cropped along eyes. All9 remain upright.

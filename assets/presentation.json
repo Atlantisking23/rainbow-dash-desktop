@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "referenceCoat": "#8ED8FC",
+  "profiles": {
+    "edge:bottom": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "edge:side": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "edge:top": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "enhanced:close-book": {
+      "scale": 1.06,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "enhanced:dock-bottom": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "enhanced:dock-side": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "enhanced:dock-top": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Edge/dock geometry remains controlled by edge layout; presentation applies no extra group scaling."
+    },
+    "enhanced:gaze-idle": {
+      "scale": 1.09,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "enhanced:gaze-working": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "enhanced:hair": {
+      "scale": 1.04,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "enhanced:interrupt-book": {
+      "scale": 1.05,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "enhanced:preen": {
+      "scale": 1.09,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "enhanced:proud": {
+      "scale": 1.05,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Conservative whole-group adjustment from eye-adjacent blue head block and torso evidence; scale around common support anchor."
+    },
+    "state:completed": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:dragging": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "512x384 source is bottom aligned at virtualY+128 on 512x512; no extra drag multiplier."
+    },
+    "state:error": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:idle": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:interrupted": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:received": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:waiting": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "state:working": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep the state baseline; color calibration is separate from geometry."
+    },
+    "rest:awake-idle": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep scale 1 for all bridge frames; exact awake/sleep seam images stay identical."
+    },
+    "rest:fall-asleep": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep scale 1 for all bridge frames; exact awake/sleep seam images stay identical."
+    },
+    "rest:wake-up": {
+      "scale": 1,
+      "anchorX": 256,
+      "anchorY": 480,
+      "offsetX": 0,
+      "offsetY": 0,
+      "note": "Keep scale 1 for all bridge frames; exact awake/sleep seam images stay identical."
+    }
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "description": "Newly generated G4-style edge-peeking key poses; not original show frames",
+  "created_date": "2026-10-26",
+  "authored_key_poses": 27,
+  "runtime_pngs": 27,
+  "frame_semantics": [
+    "neutral",
+    "attention",
+    "work",
+    "halfblink",
+    "closedblink",
+    "reopen",
+    "completedsmile",
+    "interrupt",
+    "sleep"
+  ],
+  "side_base_faces": "left",
+  "left_edge_mirrors_side": true,
+  "top_orientation": "front-facing upside-down, horizontal attachment",
+  "rows": [
+    {
+      "kind": "side",
+      "source_file": "source/side.png",
+      "source_sha256": "ADC42A6756AD79722FE9FD4AA5AF801106807885DD446B3CFF113DCB6CF68174",
+      "source_width": 1254,
+      "source_height": 1254,
+      "source_grid": [
+        3,
+        3
+      ],
+      "authored_key_poses": 9,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "shared_scale": 1.24574208,
+      "integer_translation_only": true,
+      "frames": [
+        {
+          "file": "side/000.png",
+          "sha256": "344568FEAE0ED7270511022336A918074A0246D3E4C3B8A31704B84EB910766C"
+        },
+        {
+          "file": "side/001.png",
+          "sha256": "198FC8C826F856CB5C03E2BDBF694BBB0FDABAABD44EE3FE42D1FF55A7028EFC"
+        },
+        {
+          "file": "side/002.png",
+          "sha256": "F2C81C93176ABC8B198DBD4E66664DA4D635471F7E63983439E085B8839C1CC7"
+        },
+        {
+          "file": "side/003.png",
+          "sha256": "D786C4EC11D9E3E8BE8F7DCF2FA06B54DF2FDD176AE5A69B0A71DC966DE68013"
+        },
+        {
+          "file": "side/004.png",
+          "sha256": "800F9F326197BF7F670BA32CB96663776719F6779D27B310A7B97CA5FB61A751"
+        },
+        {
+          "file": "side/005.png",
+          "sha256": "9B0098D7160AEAFD7E9E5FA4B0DEB9807CDD9C2447F587FA478E66BCD9D0A18D"
+        },
+        {
+          "file": "side/006.png",
+          "sha256": "E3C2B9B896AF5D43EAC546C9A51AB6045AD5A15D98C22E51DEDF6D804D2B52AB"
+        },
+        {
+          "file": "side/007.png",
+          "sha256": "EFD52D105C0C074D56C1B7BAA334253B302A1EBB926C94BA20481FAA17A33EE4"
+        },
+        {
+          "file": "side/008.png",
+          "sha256": "2121C26959E5C204E15EF1D16EB1246F3C3864B207488DDE3B5070D790C00668"
+        }
+      ]
+    },
+    {
+      "kind": "top",
+      "source_file": "source/top.png",
+      "source_sha256": "3B53CD1A64ACFD1A451907B5FA20C1FF9CDFAA3C17B6347F247DA243477091A8",
+      "source_width": 1254,
+      "source_height": 1254,
+      "source_grid": [
+        3,
+        3
+      ],
+      "authored_key_poses": 9,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "shared_scale": 1.276808,
+      "integer_translation_only": true,
+      "frames": [
+        {
+          "file": "top/000.png",
+          "sha256": "8D5B8864F9380C52B01D775FA47697F4A036E57860CA300E89AB56B3CE2A5644"
+        },
+        {
+          "file": "top/001.png",
+          "sha256": "C067D74C988E190F35B47114979E8D3A9DC47FDEF946C15E82D63CC1F2A87FBC"
+        },
+        {
+          "file": "top/002.png",
+          "sha256": "B1457B33D463BFE350FE5297251A21BDAA62C861BF0FF61EFD7C8480CBEF67F4"
+        },
+        {
+          "file": "top/003.png",
+          "sha256": "10B2D15E00329827E92E30BEDAD6AA739E5C184292BDED99CD2AEEF30902CA81"
+        },
+        {
+          "file": "top/004.png",
+          "sha256": "7520FE2C9E8DC51AAA2F08B2EEA30B855D22936BAA6C2CD855B3AD3524512AB5"
+        },
+        {
+          "file": "top/005.png",
+          "sha256": "13AFAD77E6A3A4A7A2AD83A53006D0F80D240C6C83C5AC4F68ED9F355A2DC63E"
+        },
+        {
+          "file": "top/006.png",
+          "sha256": "4550CA49FE853178132C6C48643418611CBA8AEBE3A697511647A93588813C85"
+        },
+        {
+          "file": "top/007.png",
+          "sha256": "958B01D05BFA01CB04713A5B51ABB7E85B2E457619D5C140D4C2CB3207D0E79B"
+        },
+        {
+          "file": "top/008.png",
+          "sha256": "6C41589D851B34374A2E9BEC9D202A971F242AFEA69FF528F06FB71831604D70"
+        }
+      ]
+    },
+    {
+      "kind": "bottom",
+      "source_file": "source/bottom.png",
+      "source_sha256": "90E4EB05F257261B70EC48B706313DC55EF9B753F7903C5B7A1A97C5A665C5E6",
+      "source_width": 1254,
+      "source_height": 1254,
+      "source_grid": [
+        3,
+        3
+      ],
+      "authored_key_poses": 9,
+      "runtime_canvas": [
+        512,
+        512
+      ],
+      "shared_scale": 1.29620254,
+      "integer_translation_only": true,
+      "frames": [
+        {
+          "file": "bottom/000.png",
+          "sha256": "18DC798420E1C36A8E2A6583BF00EB3C5C3CC41359B720A75140184DAC9C5513"
+        },
+        {
+          "file": "bottom/001.png",
+          "sha256": "5C9EEA375BDED369504C2D36FFB1B59C8900714E5543128F9DA8C4AB3060E3B2"
+        },
+        {
+          "file": "bottom/002.png",
+          "sha256": "53271E1ED01AC027A024124EC5A6420A1E1A793040208DE26387AFB0044A1DCE"
+        },
+        {
+          "file": "bottom/003.png",
+          "sha256": "D439DA1733CD1FF5C024332E7C7657C7A4759469A36F3018BBFC41A68B2D5E33"
+        },
+        {
+          "file": "bottom/004.png",
+          "sha256": "C9F84DD98F509F679BF53BF377570A22B40E0F11E289DECCA801C4AA8E981261"
+        },
+        {
+          "file": "bottom/005.png",
+          "sha256": "CF8BAEE606A6B52AD030B13A3C75B489E4EF63429FFD8C4D69D7CDAE76D1D756"
+        },
+        {
+          "file": "bottom/006.png",
+          "sha256": "AA5FFCDC39073CE7760F60FD80D7445E34315C0B6851FB3456D9DC94E068F62D"
+        },
+        {
+          "file": "bottom/007.png",
+          "sha256": "C3AA370755207279BF6567912699544AE8E5C4E41DBC14C502E1AAF11A1DDAE0"
+        },
+        {
+          "file": "bottom/008.png",
+          "sha256": "211BFFD2D08DF78181A534B3BD4DEE36812C37EC51F94A324AD352C4730320D7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+Production transparent PNG animation sprite sheet for G4 My Little Pony Rainbow Dash. SIX sequential key poses in a STRICT 3 column by 2 row grid, each cell approximately512x512, landscape1536x1024 overall. Genuine alpha background, no coloured background, checkerboard, halo or shadows. NO text, labels, numbers, gridlines, border, watermark, icons or UI. At least12px transparent separation between all poses; no connected characters across cells. Crisp high resolution smooth flat cel-art matching the approved reference: cyan pony, magenta eyes with natural eyelids, short equine muzzle, correctly layered rainbow forelock/mane/tail, medium-blue contour, no horn or fingers, no 3D/fur/pixel art/chibi. Same model proportions, fixed camera and common scale across6cels. Don't zoom each pose to fill its cell. Keep head scale and anchor fixed within sequences, preserve anatomy and antialiased transparent contour. Natural expressions: self-assured playful, relaxed eyelids not staring. No extra limbs or props. Each action reads as a continuous six-step sequence, row-major0..5. This is original production animation art, not copied show frames.
+
+READING TO COMPLETION: use reference seated Rainbow Dash on a cloud holding a red book. MIRROR the reference composition to make pony face LEFT, and keep this left orientation ALL6. Lock SAME cloud position/bottom, tail silhouette, seated body, book spine centre and head proportions across all6:
+0 calm reading, two forehooves support OPEN red book at chest/lap.
+1 eyes lift a little while near hoof catches the top cover.
+2 cover and pages pivot half shut around fixed spine; both forehooves guide book.
+3 red book closes completely, still held in same lap position.
+4 closed book settles on lap, pony lifts her chin with a small proud smile.
+5 closed book held against lap, happy gently closed curved eyes, wings still folded; a clear endpoint that can transition to existing completion celebration.
+Entire cloud, tail, book and both front hooves visible, no finger hands, no book teleporting or sliding. Page count normal. Don't move/resize cloud or body acrossframes.

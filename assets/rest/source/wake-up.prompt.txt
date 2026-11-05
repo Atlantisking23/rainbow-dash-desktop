@@ -1,0 +1,11 @@
+Use case: stylized-concept
+Asset type: production six-cel waking animation sprite sheet, 3 columns by2 rows, genuine transparent alpha.
+Input images: Image1 exact existing sleeping pony on her full soft white cloud START pose; Image2 the new awake STANDING pony reference with NO big cloud, visual identity and END pose. Show a coherent transition from cloud nap to plain standing on the desktop, no cloud left underneath when awake.
+Same adult G4 Rainbow Dash, blue coat/cyan outlines, correct rainbow mane/tail, magenta eyes, tiny cloud-lightning flank cutie mark, exactly four legs and two wings. Fixed head/body construction and pony size.
+Frame0 upper-left: the first reference exactly, asleep curled on full cloud, head rests on forelegs at RIGHT, rainbow tail curls left/front, closed eyes.
+Frame1 upper-middle: identical lying body/cloud, one ear lifts and eyes gently open in response; not startled.
+Frame2 upper-right: head raises, front hooves unfold and start to plant, chest lifts slightly, cloud remains under lying hindquarters.
+Frame3 lower-left: pushes up on forelegs and unfolds hindlegs, cloud becomes a flatter, softer wisp as the body rises. Tail relaxes down left.
+Frame4 lower-middle: stands on all four hooves and makes one SMALL wing stretch, eyes naturally open and pleasant; cloud has almost disappeared, only a tiny faint wisp at hoof level. No oversized wings.
+Frame5 lower-right: fully awake and standing on four planted hooves, wings folded, little confident smile, open magenta eyes; matches second reference. NO big cloud, NO pedestal, NO white puff/patch under or around feet. Only the flank emblem keeps its tiny cloud symbol.
+Composition:1536x1024, six equal square cells, reading order0..5. Face screen RIGHT in all cels, same camera and scale, full tail/mane/hooves/cloud within each cell with transparent margins; constant ground baseline near94%. The sleeping cloud gradually retires so ordinary standing matches the pet's other task animations. Clean flat 2D TV animation, polished cyan smooth outlines, accurate colors. No colored backdrop, halo, blur, grid lines, text, numbers, labels, watermark, ground line, shadow, symbols, pixel art or 3D. Actual transparency.

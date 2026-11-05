@@ -1,0 +1,45 @@
+INITIAL PROMPT
+
+Use case: illustration-story.
+Asset type: production animation sprite sheet for an independent Windows desktop pet, six frames of Rainbow Dash accelerating in horizontal flight toward SCREEN LEFT.
+
+Input images: Image 1 (received/000.png) is the character identity and original G4 cartoon silhouette reference: sky-blue pegasus pony Rainbow Dash, short rounded muzzle, magenta eyes, rainbow-colored angular mane and long rainbow tail, simple blue outline, accurate cloud-and-rainbow-lightning cutie mark. Image 2 (five-state preview) is the flat 2D line and color style reference only; do not reproduce its poses, props, captions, layout, or background.
+
+Motion reference researched from the official animation clip: My Little Pony, Friendship Is Magic Season 1 — SONIC RAINBOOM! official clip, https://www.youtube.com/watch?v=uHz5glnaw2Y . The important motion is streamlined flying: two front hooves reaching forward to lead the flight, hind legs collected or extended behind, level elongated body, wind-swept mane and tail trailing backward. This is flying, not four-legged galloping. Do not copy the clip's dive angle, environment, rainbow trail, or any effects.
+
+Primary request: Create ONE 1536 x 1024 RGBA image with a genuinely transparent background. Exactly SIX complete isolated full-body poses of THE SAME Rainbow Dash. Arrange an invisible regular grid of 3 columns x 2 rows, exactly 512 x 512 per source cell. Frame order is top row left to right, then bottom row left to right. No grid lines or frame labels. Each cell contains exactly one complete pony with ALL wing tips, all hooves, the entire mane, and the entire tail fully visible and contained strictly inside its own 512 x 512 cell. No overlaps between cells. No cropped body parts.
+
+Character and style: authentic G4 Friendship Is Magic 2D model sheet appearance, clean smooth flat cel colors with consistent blue cartoon outlines, high resolution and NON-PIXEL art. Sky blue body, short rounded nose, magenta irises, accurate rainbow mane and tail. Use the supplied identity faithfully. Do not redesign her as a realistic horse, chibi, humanoid, 3D render, or anime. Her eye is lightly narrowed with confident focused concentration and a small determined confident mouth; never wide startled staring eyes. Preserve this facial expression consistently in every frame.
+
+Pose and orientation: ALL SIX face SCREEN LEFT. The nose and forward-reaching front hooves point LEFT, tail streams RIGHT. Keep the torso level and lowered in a fast streamlined flight pose, back and belly nearly horizontal. Both front legs lead forward, with subtle bend; hind legs trail backward and change only subtly in aerodynamic collection/extension. No alternating running or walking hoof cycle. The mane flows backward toward RIGHT close to the neck; the long rainbow tail flows smoothly toward RIGHT with subtle delayed wave motion.
+
+Spatial registration: Same body proportions, same torso length, same torso size, same torso center and horizontal baseline in every cell, so the body never jumps or changes scale during playback. Each FULL pony silhouette including tail is about 420 pixels wide, centered in its cell, with generous transparent safety margin of at least 40 pixels on all cell edges. Keep wing movement compact enough to remain fully inside the safe area. Full character silhouettes stay approximately x=46..466 and y=55..447 in each 512-square cell. The root of the wings stays fixed on the upper back across all frames. Wings may flex and rotate naturally but must remain anatomically attached, with clearly readable feather structure. Complete far wing when visible; no detached feathers or extra wings.
+
+Six phase instructions, same streamlined body with distinct wing shapes:
+1. TOP LEFT: high upstroke apex, main visible wing lifted steeply upward, feather fan clean and complete.
+2. TOP CENTER: descending half-stroke, main wing reaches diagonally upward/back, distinctly lower than frame 1 and preparing the power stroke.
+3. TOP RIGHT: downstroke apex, main wing sweeps downward below the torso with complete visible feather tips, still fully contained.
+4. BOTTOM LEFT: returning from the low point, wing bends and partly gathers while lifting, visibly between the low apex and torso level.
+5. BOTTOM CENTER: upward recovery, wing gathered and angled diagonally up with folded elbow and feathers beginning to open.
+6. BOTTOM RIGHT: high half-open recovery, wing opens farther upward toward frame 1, forming a smooth loop back to the first pose.
+Make these six consecutive wingbeat phases visually distinct and smoothly loopable; do not merely duplicate the same wing. Preserve body length and same head/eye design in every frame. The mane and tail have only small coherent wind-lag changes; no stretching the entire character.
+
+Constraints: transparent background, no scenery, no separate clouds, no cloud perch, no floor, no ground, no cast shadow, no speed lines, no rainbow trail, no particles or falling objects, no books, no text, no labels, no watermark, no border, no visible grid, no extra characters. The cloud design in the small canonical cutie mark on her flank is allowed. Exactly six whole ponies in six safely separated cells; production sprite-sheet clarity and complete silhouettes take priority.
+
+TARGETED SAME-JOB REPAIR PROMPT
+
+Edit the provided sprint sprite sheet (image 1), using image 2 as original character identity and image 3 only for original G4 flat style. Preserve the good left-facing streamlined flying poses, the lightly narrowed confident magenta eyes, the sky-blue Rainbow Dash identity and the simple G4 flat cartoon linework. This is the ONE corrected final source sheet.
+
+CRITICAL CORRECTIONS, all required:
+1. Remove EVERY background pixel, every glow, haze, illumination, gradient, shadow, and colored halo. The entire area outside the six characters MUST be truly transparent RGBA alpha 0. No dark backdrop and no simulated checkerboard. The characters themselves have crisp flat colors, no external light aura.
+2. Exactly 1536 x 1024 image, invisible 3 columns x 2 rows, 512 x 512 each. Scale each WHOLE pony including all wings, hooves, mane, and tail to ONLY about 420 pixels wide and center it in its cell. The first version is too large and goes near cell boundaries. In EACH cell put the ENTIRE silhouette strictly inside x=46..466 and y=55..447 relative to that cell. Keep at least 40 pixels transparent margin around all extremities. All six must be FULLY uncropped and never touch or cross cell boundaries.
+3. Fix the wingbeat phases to six distinct continuous states. The first version has too many almost-up wings. Read in order top-left, top-middle, top-right, bottom-left, bottom-middle, bottom-right:
+FRAME 1: wing fully raised, steep upward extended feather fan.
+FRAME 2: wing coming down at a diagonal angle, between raised and horizontal.
+FRAME 3: wing fully extended DOWNWARD below the body, at lowest downstroke.
+FRAME 4: wing still DOWNWARD but elbow bent, feathers partly gathered and beginning upward recovery; clearly keep the wingtip below the belly, not up over the back.
+FRAME 5: wing crossing the HORIZONTAL torso plane in folded upward recovery; the feathers sweep backward almost horizontally, clearly different from an upright wing.
+FRAME 6: wing half-open UPWARD at a strong diagonal angle, leading smoothly back to the fully raised frame 1.
+These are a FLAP CYCLE, with only the wings and slight tail/mane wind lag changing, not a running cycle.
+
+KEEP INVARIANT: exactly one complete pony per cell. All head, nose and two forward-reaching front hooves point LEFT. Tail and mane stream RIGHT. Both front hooves lead ahead in streamlined flight, hind legs trail behind. Maintain identical body size, torso length, torso center and baseline in all six frames. Do not lengthen or shorten the body from frame to frame. Expression remains confident focused and lightly squinting, never wide staring. Accurate short rounded muzzle and Rainbow Dash rainbow hair and canonical small cloud-lightning cutie mark. High-resolution clean smooth flat original G4 2D line art, non-pixel. No text, labels, grid lines, borders, scenery, clouds except canonical cutie mark, ground, books, shadows, speedlines, rainbow trails, detached feathers, particles or other objects. The ONLY visible pixels should belong to the six crisp complete characters on transparent alpha.

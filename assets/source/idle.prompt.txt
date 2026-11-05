@@ -1,0 +1,14 @@
+Use case: illustration-story.
+Asset type: a transparent animation cel sheet for a Windows desktop Rainbow Dash companion.
+Reference image role: the attached six-frame original G4 Rainbow Dash cloud-nap montage is the anatomy, pose and relaxed-emotion reference. It is not the output. Do not copy the scene background or montage labels. Character: Rainbow Dash from My Little Pony Friendship Is Magic, original G4 television design: cyan coat, short rounded muzzle, large head in natural G4 proportions, accurately layered red/orange/yellow forelock and green/blue/violet mane, rainbow tail, folded wings, three small eyelashes and clean blue outlines.
+Generate ONE 1536x1024 RGBA transparent sheet with exactly SIX complete animation cels in 3 columns and 2 rows, read left-to-right and next row. Each invisible slot is 512x512, and the entire cloud and pony must have at least 45 pixels of fully transparent empty gutter on all four edges. No cell borders, no words, no numbers, no labels. Genuine alpha outside pony and the small white cloud underneath. Do not paint a checkerboard.
+In every cel the SAME Rainbow Dash is curled comfortably asleep on the SAME small white puffy cloud, like the original show reference: head resting on her forehooves, hindquarters curled behind her, folded wing visible, long rainbow tail curling softly around the body. Entire silhouette including mane, tail tip, hooves and cloud is visible and not cropped. Eyes remain fully closed curved lines in ALL SIX cels; her mouth stays closed in a tiny soft content smile and her ears are relaxed. No side-eye, no glare, no smug expression, no mouth opening or snoring distortion.
+The six cels depict ONE subtle breathing cycle, not different poses:
+Cel 1 top left: relaxed resting low breath.
+Cel 2 top middle: chest begins to rise by only 2 pixels, body and cloud anchored.
+Cel 3 top right: gentle peak inhale, only chest contour rises by 3-4 pixels and a small mane tuft settles by 1 pixel.
+Cel 4 bottom left: chest settles down halfway.
+Cel 5 bottom middle: quiet exhale to the original chest contour.
+Cel 6 bottom right: the same closed-eye resting drawing as cel 1 for a seamless loop.
+Strict animation invariants: identical character scale, head size and location, closed-eye shape, muzzle, forehooves, ears, wings, cloud shape, tail contour, perspective, outline weight, baseline and registration in all six slots. Head and cloud stay fixed; body stays curled; no lifting hooves, no opening eyes, no bobbing entire cloud, no tail wag, no six different body drawings. Think of a held model cel with the tiniest chest breath. Subject plus cloud occupies roughly 400x310 pixels centered in each 512 square.
+Style: faithful original G4 flat television cel art with solid fills and crisp blue outlines, not a stylized fan redesign. No gradients, no shadow blobs outside cloud, no texture, no glow, no 3D, no chibi, no anime, no pixel art, no extra props or other characters.

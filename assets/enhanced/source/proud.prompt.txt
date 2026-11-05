@@ -1,0 +1,10 @@
+Production transparent PNG animation sprite sheet for G4 My Little Pony Rainbow Dash. SIX sequential key poses in a STRICT 3 column by 2 row grid, each cell approximately512x512, landscape1536x1024 overall. Genuine alpha background, no coloured background, checkerboard, halo or shadows. NO text, labels, numbers, gridlines, border, watermark, icons or UI. At least12px transparent separation between all poses; no connected characters across cells. Crisp high resolution smooth flat cel-art matching the approved reference: cyan pony, magenta eyes with natural eyelids, short equine muzzle, correctly layered rainbow forelock/mane/tail, medium-blue contour, no horn or fingers, no 3D/fur/pixel art/chibi. Same model proportions, fixed camera and common scale across6cels. Don't zoom each pose to fill its cell. Keep head scale and anchor fixed within sequences, preserve anatomy and antialiased transparent contour. Natural expressions: self-assured playful, relaxed eyelids not staring. No extra limbs or props. Each action reads as a continuous six-step sequence, row-major0..5. This is original production animation art, not copied show frames.
+
+LOW FREQUENCY PERSONALITY: a brief cocky folded-forelegs pose. Whole Rainbow Dash faces LEFT in three-quarter view, no book/cloud:
+0 relaxed standing baseline with folded wings.
+1 shifts weight onto haunches smoothly, rear feet stay anchored.
+2 sits back on haunches and raises front forelegs.
+3 BOTH front forelegs fold across chest in a recognisable equine crossed-hoof gesture, one eyebrow raised and small cheeky smirk.
+4 uncrosses front legs, leans forward to rise.
+5 back to same standing baseline as0.
+No human torso/arms/hands, no floating in air, four equine limbs anatomically coherent, don't change head scale.
