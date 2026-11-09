@@ -42,24 +42,28 @@ namespace RainbowDashDesktop
         private long stateAt;
         private long nextBlink = 3800;
         private long blinkAt = -1;
-        public int Sample(string requested, long now, bool reduceMotion = false)
+        public int Sample(string requested, long now, bool reduceMotion = false, DockEdge edge = DockEdge.None)
         {
             if (requested != state)
             { state = requested; stateAt = now; blinkAt = -1; nextBlink = now + 3600; }
             long stateAge = now - stateAt;
+            bool side = edge == DockEdge.Left || edge == DockEdge.Right;
+            bool needsAttention = state == "waiting" || state == "error";
             int basis = state == "working" ? 2 : state == "completed" && stateAge < 1900 ? 6 :
                 state == "received" && stateAge < 1100 ? 1 :
-                (state == "interrupted" || state == "waiting" || state == "error") && stateAge < 1600 ? 7 : 0;
-            if (reduceMotion) return basis;
+                (state == "interrupted" && stateAge < 1600 || needsAttention && (side || stateAge < 1600)) ? 7 :
+                side ? 1 : 0;
+            if (reduceMotion || side && needsAttention) return basis;
             // Closed happy eyes are deliberate; only open-eye expressions blink.
             if (basis == 6) return 6;
             if (blinkAt < 0 && now >= nextBlink) blinkAt = now;
             if (blinkAt >= 0)
             {
                 long age = now - blinkAt;
-                if (age < 45) return 3;
+                int halfBlink = side && basis == 2 ? 5 : 3;
+                if (age < 45) return halfBlink;
                 if (age < 110) return 4;
-                if (age < 165) return 5;
+                if (age < 165) return side ? halfBlink : 5;
                 blinkAt = -1; nextBlink = now + 4300 + (now % 1700);
             }
             // The calm rest cel is occasional, so the pet keeps a recognizable face.

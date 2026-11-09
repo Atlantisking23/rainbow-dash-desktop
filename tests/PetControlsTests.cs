@@ -82,6 +82,15 @@ internal static class PetControlsTests
                     "Reduced motion leaves the edge expression still while showing actual task changes.");
                 Call(window, "SetReduceMotion", false);
                 Check(!Property(window, "ReducedMotionActive"), "The normal animation mode can be restored.");
+                Call(window, "CyclePetVisibility");
+                typeof(PetWindow).GetField("dockTransitionAt", Hidden).SetValue(window,
+                    Field<Stopwatch>(window, "interactionClock").ElapsedMilliseconds - 600L);
+                Call(window, "AdvanceEdge");
+                Call(window, "CyclePetVisibility");
+                Call(window, "CyclePetVisibility");
+                Call(window, "AdvanceDockExit", Field<long>(window, "dockLeavingAt") + 1000L);
+                Check(window.IsVisible && !Property(window, "IsDocked"),
+                    "Finding the hidden pet finishes expanding it with normal motion enabled.");
 
                 Console.WriteLine("PASS PetControlsTests " + checks + " checks");
                 result = 0;

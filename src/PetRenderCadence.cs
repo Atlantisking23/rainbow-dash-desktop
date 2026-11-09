@@ -30,7 +30,7 @@ namespace RainbowDashDesktop
 
             string restPreview = EffectiveRestPreview;
             bool sleeping = restPreview == "sleeping" || restPreview == null && rest.Stage == RestStage.Sleeping;
-            bool animated = drag.IsPressed || edgePressed || dockTransition || dockLeaving || PatrolInProgress;
+            bool animated = drag.IsPressed || edgePressed || dockTransition || dockLeaving || SidePeekMoving || PatrolInProgress;
             if (!animated && !ReducedMotionActive && !IsDocked && !sleeping)
             {
                 animated = rest.Stage != RestStage.Awake || restPreview == "fall" || restPreview == "wake" ||

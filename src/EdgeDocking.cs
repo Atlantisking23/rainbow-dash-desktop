@@ -33,11 +33,18 @@ namespace RainbowDashDesktop
         public const double CornerMargin = 64;
         public const double PeekDistance = 12;
         public const double UndockDistance = 64;
+        private const double SidePoseExtent = 96;
+        private const double SideViewportHeight = 112;
         private const double Epsilon = 0.01;
 
-        public static Size CompactSize(DockEdge edge)
+        public static bool IsSide(DockEdge edge) { return edge == DockEdge.Left || edge == DockEdge.Right; }
+        public static double SidePoseSize(double sideScale) { return SidePoseExtent * sideScale; }
+        public static double PeekExtent(DockEdge edge, double sideScale = 1)
+        { return IsSide(edge) ? PeekDistance * sideScale : PeekDistance; }
+
+        public static Size CompactSize(DockEdge edge, double sideScale = 1)
         {
-            if (edge == DockEdge.Left || edge == DockEdge.Right) return new Size(56, 88);
+            if (IsSide(edge)) return new Size(SidePoseSize(sideScale) - PeekExtent(edge, sideScale), SideViewportHeight * sideScale);
             if (edge == DockEdge.Top) return new Size(88, 88);
             if (edge == DockEdge.Bottom) return new Size(88, 56);
             return new Size(0, 0);
@@ -46,7 +53,7 @@ namespace RainbowDashDesktop
         // The caller invokes this only after a real drag was released successfully.
         // visibleBounds is the rendered pony's opaque area, never its transparent canvas.
         public static bool TryFindDock(Rect visibleBounds, Point pointer, IList<EdgeMonitor> monitors,
-            out EdgeDockTarget target)
+            out EdgeDockTarget target, double sideScale = 1)
         {
             target = null;
             if (!Valid(visibleBounds) || !Finite(pointer.X) || !Finite(pointer.Y) || monitors == null) return false;
@@ -66,14 +73,15 @@ namespace RainbowDashDesktop
                     // arrival, provided the bounded near-work-area test above holds.
                     if (signedDistance > SnapDistance + Epsilon) continue;
                     double distance = Math.Abs(signedDistance);
-                    double parallelStart = IsVertical(edge) ? visibleBounds.Top : visibleBounds.Left;
-                    double parallelEnd = IsVertical(edge) ? visibleBounds.Bottom : visibleBounds.Right;
-                    double workStart = IsVertical(edge) ? work.Top : work.Left;
-                    double workEnd = IsVertical(edge) ? work.Bottom : work.Right;
+                    bool side = IsSide(edge);
+                    double parallelStart = side ? visibleBounds.Top : visibleBounds.Left;
+                    double parallelEnd = side ? visibleBounds.Bottom : visibleBounds.Right;
+                    double workStart = side ? work.Top : work.Left;
+                    double workEnd = side ? work.Bottom : work.Right;
                     if (parallelEnd < workStart || parallelStart > workEnd) continue;
-                    double center = IsVertical(edge) ? visibleBounds.Top + visibleBounds.Height / 2 : visibleBounds.Left + visibleBounds.Width / 2;
-                    double fraction = FractionForCenter(edge, work, center);
-                    EdgeDockTarget candidate = Make(edge, monitor, work, fraction, false);
+                    double center = side ? visibleBounds.Top + visibleBounds.Height / 2 : visibleBounds.Left + visibleBounds.Width / 2;
+                    double fraction = FractionForCenter(edge, work, center, sideScale);
+                    EdgeDockTarget candidate = Make(edge, monitor, work, fraction, false, sideScale);
                     if (IsSharedBoundary(edge, monitor, work, candidate.Bounds, monitors)) continue;
                     bool containsPointer = monitor.Bounds.Contains(pointer);
                     if (target == null || distance < bestDistance - Epsilon ||
@@ -87,21 +95,21 @@ namespace RainbowDashDesktop
         }
 
         public static EdgeDockTarget Resolve(DockEdge edge, string monitorId, double fraction,
-            IList<EdgeMonitor> monitors, bool peek)
-        { return ResolveCore(edge, monitorId, fraction, monitors, peek, null); }
+            IList<EdgeMonitor> monitors, bool peek, double sideScale = 1)
+        { return ResolveCore(edge, monitorId, fraction, monitors, peek, null, sideScale); }
 
         public static EdgeDockTarget Resolve(DockEdge edge, string monitorId, double fraction,
-            IList<EdgeMonitor> monitors, bool peek, Point fallbackPosition)
-        { return ResolveCore(edge, monitorId, fraction, monitors, peek, fallbackPosition); }
+            IList<EdgeMonitor> monitors, bool peek, Point fallbackPosition, double sideScale = 1)
+        { return ResolveCore(edge, monitorId, fraction, monitors, peek, fallbackPosition, sideScale); }
 
         private static EdgeDockTarget ResolveCore(DockEdge edge, string monitorId, double fraction,
-            IList<EdgeMonitor> monitors, bool peek, Point? fallbackPosition)
+            IList<EdgeMonitor> monitors, bool peek, Point? fallbackPosition, double sideScale)
         {
             if (edge == DockEdge.None || !Enum.IsDefined(typeof(DockEdge), edge) || monitors == null) return null;
             EdgeMonitor chosen = FindMonitor(monitorId, monitors, fallbackPosition);
             Rect work;
             if (chosen == null || !TryWorkArea(chosen, out work)) return null;
-            EdgeDockTarget target = Make(edge, chosen, work, Normalize(fraction), peek);
+            EdgeDockTarget target = Make(edge, chosen, work, Normalize(fraction), peek, sideScale);
             // A changed monitor layout may turn a previously external edge into a seam.
             // Restoring at that seam would obstruct moving between displays.
             if (IsSharedBoundary(edge, chosen, work, target.Bounds, monitors)) return null;
@@ -137,23 +145,28 @@ namespace RainbowDashDesktop
             return 0;
         }
 
-        private static EdgeDockTarget Make(DockEdge edge, EdgeMonitor monitor, Rect work, double fraction, bool peek)
+        private static EdgeDockTarget Make(DockEdge edge, EdgeMonitor monitor, Rect work, double fraction, bool peek, double sideScale)
         {
-            Size size = CompactSize(edge);
-            double length = IsVertical(edge) ? size.Height : size.Width;
+            Size size = CompactSize(edge, sideScale);
+            bool side = IsSide(edge);
+            double length = side ? size.Height : size.Width;
             double min, max; AlongRange(edge, work, length, out min, out max);
             double along = min + Normalize(fraction) * (max - min);
             double width = size.Width, height = size.Height;
-            if (peek) { if (IsVertical(edge)) width += PeekDistance; else height += PeekDistance; }
+            if (peek)
+            {
+                if (side) width += PeekExtent(edge, sideScale);
+                else height += PeekDistance;
+            }
             double x = edge == DockEdge.Left ? work.Left : edge == DockEdge.Right ? work.Right - width : along;
             double y = edge == DockEdge.Top ? work.Top : edge == DockEdge.Bottom ? work.Bottom - height : along;
             return new EdgeDockTarget(edge, monitor.Id, Normalize(fraction), new Rect(x, y, width, height));
         }
 
-        private static double FractionForCenter(DockEdge edge, Rect work, double center)
+        private static double FractionForCenter(DockEdge edge, Rect work, double center, double sideScale)
         {
-            Size size = CompactSize(edge);
-            double length = IsVertical(edge) ? size.Height : size.Width;
+            Size size = CompactSize(edge, sideScale);
+            double length = IsSide(edge) ? size.Height : size.Width;
             double min, max; AlongRange(edge, work, length, out min, out max);
             if (max - min <= Epsilon) return 0.5;
             return Normalize((center - length / 2 - min) / (max - min));
@@ -161,8 +174,9 @@ namespace RainbowDashDesktop
 
         private static void AlongRange(DockEdge edge, Rect work, double length, out double min, out double max)
         {
-            double start = IsVertical(edge) ? work.Top : work.Left;
-            double end = IsVertical(edge) ? work.Bottom : work.Right;
+            bool side = IsSide(edge);
+            double start = side ? work.Top : work.Left;
+            double end = side ? work.Bottom : work.Right;
             // Very small screens cannot reserve 64 DIP at both corners. Centering
             // preserves a visible pet instead of producing inverted clamp bounds.
             if (end - start < CornerMargin * 2 + length)
@@ -189,7 +203,7 @@ namespace RainbowDashDesktop
                     edge == DockEdge.Top ? other.Bounds.Top < boundary - Epsilon && other.Bounds.Bottom >= boundary - Epsilon :
                     other.Bounds.Bottom > boundary + Epsilon && other.Bounds.Top <= boundary + Epsilon;
                 if (!beyond) continue;
-                double overlap = IsVertical(edge) ? Math.Min(compact.Bottom, other.Bounds.Bottom) - Math.Max(compact.Top, other.Bounds.Top) :
+                double overlap = IsSide(edge) ? Math.Min(compact.Bottom, other.Bounds.Bottom) - Math.Max(compact.Top, other.Bounds.Top) :
                     Math.Min(compact.Right, other.Bounds.Right) - Math.Max(compact.Left, other.Bounds.Left);
                 if (overlap > Epsilon) return true;
             }
@@ -234,7 +248,6 @@ namespace RainbowDashDesktop
             if (edge == DockEdge.Top) return visible.Top - work.Top;
             return work.Bottom - visible.Bottom;
         }
-        private static bool IsVertical(DockEdge edge) { return edge == DockEdge.Left || edge == DockEdge.Right; }
         private static bool Valid(Rect rect)
         { return !rect.IsEmpty && Finite(rect.X) && Finite(rect.Y) && Finite(rect.Width) && Finite(rect.Height) && rect.Width > 0 && rect.Height > 0; }
         private static bool Finite(double value) { return !Double.IsNaN(value) && !Double.IsInfinity(value); }
