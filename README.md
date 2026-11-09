@@ -2,6 +2,8 @@
 
 一款 Windows 桌宠。云宝会随着本机 Codex 的任务进度点头、翻书和庆祝，空闲时会在云上小憩。小圆环显示五小时和一周的剩余额度。
 
+[更新记录](CHANGELOG.md)
+
 ![云宝桌宠动画演示](docs/animation-preview.gif)
 
 ## 功能
