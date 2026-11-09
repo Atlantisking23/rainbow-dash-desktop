@@ -25,8 +25,8 @@ internal static class EdgeDockingTests
             EdgeDockTarget target;
             Check(Dock(new Rect(10, 400, 240, 180), one, out target) && target.Edge == DockEdge.Left,
                 "A released pony ten DIP from the left work edge docks left.");
-            Check(At(target.Bounds, 0, 446, 56, 88), "Left dock owns only a 56 by 88 DIP hit window.");
-            Check(Dock(new Rect(1660, 400, 240, 180), one, out target) && target.Edge == DockEdge.Right && At(target.Bounds, 1864, 446, 56, 88),
+            Check(At(target.Bounds, 0, 434, 84, 112), "Left dock owns an 84 by 112 DIP hit window.");
+            Check(Dock(new Rect(1660, 400, 240, 180), one, out target) && target.Edge == DockEdge.Right && At(target.Bounds, 1836, 434, 84, 112),
                 "Right snap includes the exact twenty DIP threshold and stays inside work area.");
             Check(Dock(new Rect(700, 8, 240, 180), one, out target) && target.Edge == DockEdge.Top && At(target.Bounds, 776, 0, 88, 88),
                 "Top docking keeps a horizontal 88 by 88 DIP viewport for the entire inverted head.");
@@ -68,10 +68,18 @@ internal static class EdgeDockingTests
             EdgeDockTarget rightPeek = EdgeDockGeometry.Resolve(DockEdge.Right, "main", 0.5, one, true);
             Check(Close(rightPeek.Bounds.Right, right.Bounds.Right) && Close(right.Bounds.Left - rightPeek.Bounds.Left, 12),
                 "Right hover grows toward the screen interior.");
+            EdgeDockTarget rightLarge = EdgeDockGeometry.Resolve(DockEdge.Right, "main", 0.5, one, false, 1.25);
+            EdgeDockTarget rightLargePeek = EdgeDockGeometry.Resolve(DockEdge.Right, "main", 0.5, one, true, 1.25);
+            Check(At(rightLarge.Bounds, 1815, 450, 105, 140) && At(rightLargePeek.Bounds, 1800, 450, 120, 140),
+                "At 125%, the right hover exposes the full 120 DIP pose while retaining its edge and height.");
+            Check(EdgeDockGeometry.TryFindDock(new Rect(1660, 400, 240, 180), new Point(1900, 490), one, out target, 1.25) &&
+                At(target.Bounds, 1815, 420, 105, 140), "A scaled drag release keeps its visible center and saves a matching side target.");
             EdgeDockTarget top = EdgeDockGeometry.Resolve(DockEdge.Top, "main", 0.5, one, false);
             EdgeDockTarget topPeek = EdgeDockGeometry.Resolve(DockEdge.Top, "main", 0.5, one, true);
             Check(Close(topPeek.Bounds.Top, 0) && At(topPeek.Bounds, 916, 0, 88, 100),
                 "Top hover grows downward while preserving horizontal alignment.");
+            Check(At(EdgeDockGeometry.Resolve(DockEdge.Top, "main", 0.5, one, true, 1.25).Bounds, 916, 0, 88, 100),
+                "Increasing the side pose scale leaves the top dock viewport the same.");
             EdgeDockTarget bottom = EdgeDockGeometry.Resolve(DockEdge.Bottom, "main", 0.5, one, false);
             EdgeDockTarget bottomPeek = EdgeDockGeometry.Resolve(DockEdge.Bottom, "main", 0.5, one, true);
             Check(Close(bottomPeek.Bounds.Bottom, 1040) && Close(bottomPeek.Bounds.Height - bottom.Bounds.Height, 12),
@@ -91,6 +99,10 @@ internal static class EdgeDockingTests
             Check(!Dock(new Rect(1680, 300, 240, 160), partial, out target), "A partial seam suppresses the overlapping section.");
             Check(Dock(new Rect(1680, 800, 240, 160), partial, out target) && target.Edge == DockEdge.Right,
                 "The exposed section below a partial seam remains available.");
+            Rect nearPartialSeam = new Rect(1680, 626, 240, 80);
+            Check(Dock(nearPartialSeam, partial, out target) && target.Edge == DockEdge.Right &&
+                !EdgeDockGeometry.TryFindDock(nearPartialSeam, new Point(1900, 666), partial, out target, 1.25),
+                "The taller scaled side window is refused when it would overlap a partial monitor seam.");
             List<EdgeMonitor> stacked = new List<EdgeMonitor> { Monitor("lower", 0, 0, 1920, 1080), Monitor("upper", 0, -1080, 1920, 1080) };
             Check(!Dock(new Rect(700, 0, 240, 180), stacked, out target), "Vertical monitor seams are suppressed as well.");
             List<EdgeMonitor> taskbarSide = new List<EdgeMonitor> {
@@ -124,7 +136,7 @@ internal static class EdgeDockingTests
                 !Dock(Rect.Empty, one, out target), "Unavailable monitors and missing opaque bounds fail safely.");
 
             Rect expanded = EdgeDockGeometry.UndockBounds(left, new Size(304, 304), one);
-            Check(At(expanded, 12, left.Bounds.Top + 44 - 152, 304, 304), "Clicking a left dock unfolds a full pet inside its work area.");
+            Check(At(expanded, 12, left.Bounds.Top + 56 - 152, 304, 304), "Clicking a left dock unfolds a full pet inside its work area.");
             expanded = EdgeDockGeometry.UndockBounds(top, new Size(304, 304), one);
             Check(Close(expanded.Top, 12) && main.WorkArea.Contains(expanded), "A top dock unfolds downward onto the screen.");
             expanded = EdgeDockGeometry.UndockBounds(bottom, new Size(304, 304), one);

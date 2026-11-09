@@ -74,12 +74,27 @@ internal static class SpritePresentationTests
             EdgeDockTarget target = EdgeDockGeometry.Resolve(edge, "", .5, monitors, false);
             if (target == null) continue;
             Call(window, "EnterDock", target, false);
+            bool side = edge == DockEdge.Left || edge == DockEdge.Right;
+            double compactWidth = window.Width, compactArtWidth = 0, compactArtLeft = 0;
             foreach (bool hover in new bool[] { false, true })
             {
                 EdgeDockHoverController controller = (EdgeDockHoverController)Field(window, "edgeHover");
                 controller.Reset();
                 if (hover) { controller.SetPointer(true, 0); controller.Advance(250); }
                 Call(window, "LayoutEdge");
+                if (side && hover)
+                {
+                    long start = (long)Field(window, "sidePeekStartedAt");
+                    Call(window, "AdvanceSidePeek", start + 80L);
+                    Call(window, "PresentSprite", start + 80L);
+                    window.UpdateLayout();
+                    Check(window.Width > compactWidth + 1 && window.Width < compactWidth + 11,
+                        edge + " peeks progressively before reaching the full reveal.");
+                    Check(Math.Abs(visible.ActualWidth - compactArtWidth) <= 1.1,
+                        edge + " artwork keeps its size during the animated reveal.");
+                    Call(window, "AdvanceSidePeek", start + 160L);
+                    Call(window, "PresentSprite", start + 160L);
+                }
                 reference.Width = logical.Width; reference.Height = logical.Height; reference.Source = logical.Source;
                 reference.RenderTransform = logical.RenderTransform;
                 Canvas.SetLeft(reference, Canvas.GetLeft(logical)); Canvas.SetTop(reference, Canvas.GetTop(logical));
@@ -93,6 +108,19 @@ internal static class SpritePresentationTests
                     label + " final image retains the real Uniform image's centered content origin. Expected=" + expected + " actual=" + actual);
                 Check(Math.Abs(actual.Width - expected.Width) <= 1.1 && Math.Abs(actual.Height - expected.Height) <= 1.1,
                     label + " final image preserves actual content size within raster and layout rounding. Expected=" + expected + " actual=" + actual);
+                if (side && !hover)
+                {
+                    compactArtWidth = actual.Width;
+                    compactArtLeft = window.Left + actual.Left;
+                }
+                else if (side)
+                {
+                    Check(Math.Abs(window.Width - compactWidth - 12) <= 1.1 && Math.Abs(actual.Width - compactArtWidth) <= 1.1,
+                        label + " reveals 12 more logical pixels without zooming the artwork.");
+                    double direction = edge == DockEdge.Left ? 1 : -1;
+                    Check(Math.Abs(window.Left + actual.Left - compactArtLeft - direction * 12) <= 1.1,
+                        label + " moves the fixed-size artwork toward the screen interior.");
+                }
                 SpritePresenter presenter = (SpritePresenter)Field(window, "edgeSpritePresenter");
                 Check(visible.Source == presenter.Output && visible.Opacity == 1,
                     label + " displays only the composed docking surface.");

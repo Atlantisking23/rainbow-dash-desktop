@@ -761,13 +761,13 @@ namespace RainbowDashDesktop
             {
                 DockEdge edge;
                 Enum.TryParse<DockEdge>(previewEdge, true, out edge);
-                EnterDock(EdgeDockGeometry.Resolve(edge, "", .5, GetEdgeMonitors(), previewEdgeHover), false);
+                EnterDock(EdgeDockGeometry.Resolve(edge, "", .5, GetEdgeMonitors(), previewEdgeHover, settings.Scale), false);
             }
             else if (settings.EdgeDockingEnabled)
             {
                 DockEdge edge;
                 if (Enum.TryParse<DockEdge>(settings.DockSide, true, out edge) && edge != DockEdge.None)
-                    EnterDock(EdgeDockGeometry.Resolve(edge, settings.DockMonitor, settings.DockFraction, GetEdgeMonitors(), false, new Point(Left, Top)), false);
+                    EnterDock(EdgeDockGeometry.Resolve(edge, settings.DockMonitor, settings.DockFraction, GetEdgeMonitors(), false, new Point(Left, Top), settings.Scale), false);
             }
             positioned = true;
             if (previewAction != null) StartEnhancedAction(previewAction, false);
@@ -1096,7 +1096,8 @@ namespace RainbowDashDesktop
             try
             {
             AdvanceRestState(now);
-            if (IsDocked || dockLeaving) { restPony.Visibility = Visibility.Collapsed; restPreviousPony.Visibility = Visibility.Collapsed; return; }
+            if (IsDocked && !(dockLeaving && sideMotion != null))
+            { restPony.Visibility = Visibility.Collapsed; restPreviousPony.Visibility = Visibility.Collapsed; return; }
             string selected = EffectiveRestPreview;
             bool preview = selected != null;
             if (!preview)
@@ -1185,6 +1186,11 @@ namespace RainbowDashDesktop
             if (IsDocked || dockLeaving)
             { spriteImage.Visibility = Visibility.Collapsed; PresentEdgeSprite(); return; }
 
+            PresentNormalSprite(now);
+        }
+
+        private void PresentNormalSprite(long now)
+        {
             string enhancedName = enhancedAction.Active ? enhancedAction.Name : gazeFrame >= 0 ? shownState == "working" ? "gaze-working" : "gaze-idle" : null;
             int enhancedFrame = enhancedAction.Active ? enhancedAction.Frame(now) : gazeFrame;
             if (previewAction != null) { enhancedName = previewAction; enhancedFrame = previewActionFrame >= 0 ? previewActionFrame : enhancedFrame; }
@@ -1256,6 +1262,7 @@ namespace RainbowDashDesktop
         private void PresentEdgeSprite()
         {
             if (batchingSpritePresentation || edgeSpriteImage == null || !IsDocked) return;
+            if (sideMotion != null) { PresentSideMotion(); return; }
             bool dock = dockActionPony.Visibility == Visibility.Visible && dockActionPony.Opacity > 0 && dockActionPony.Source != null;
             bool edge = edgePony.Visibility == Visibility.Visible && edgePony.Opacity > 0 && edgePony.Source != null;
             if (dock && !dockTransition) edge = false;
@@ -1264,17 +1271,29 @@ namespace RainbowDashDesktop
             Image second = dock && edge ? edgePony : first;
             Rect firstRect = SpriteRectangle(first), secondRect = SpriteRectangle(second);
             if (firstRect.IsEmpty || secondRect.IsEmpty) return;
+            ScaleTransform firstFacing = first.RenderTransform as ScaleTransform, secondFacing = second.RenderTransform as ScaleTransform;
+            int weight = Object.ReferenceEquals(first, second) ? 0 : (int)Math.Round(second.Opacity / (first.Opacity + second.Opacity) * 256);
+            PaintEdgeSprites((BitmapSource)first.Source, firstRect, firstFacing != null && firstFacing.ScaleX < 0,
+                (BitmapSource)second.Source, secondRect, secondFacing != null && secondFacing.ScaleX < 0, weight);
+        }
+
+        private void PaintEdgeSprites(BitmapSource first, Rect firstRect, bool mirrorFirst,
+            BitmapSource second, Rect secondRect, bool mirrorSecond, int weight)
+        {
+            if (weight == 0) { second = first; secondRect = firstRect; mirrorSecond = mirrorFirst; }
+            else if (weight == 256) { first = second; firstRect = secondRect; mirrorFirst = mirrorSecond; }
             Rect union = Rect.Union(firstRect, secondRect);
-            int width = Math.Max(1, (int)Math.Ceiling(union.Width * 2));
-            int height = Math.Max(1, (int)Math.Ceiling(union.Height * 2));
+            int width = Math.Max(1, (int)Math.Ceiling(Math.Round(union.Width * 2, 6)));
+            int height = Math.Max(1, (int)Math.Ceiling(Math.Round(union.Height * 2, 6)));
             if (edgeSpritePresenter == null || edgeSpriteWidth != width || edgeSpriteHeight != height)
             { edgeSpriteWidth = width; edgeSpriteHeight = height; edgeSpritePresenter = new SpritePresenter(width, height); }
-            firstRect.Offset(-union.X, -union.Y); secondRect.Offset(-union.X, -union.Y);
-            ScaleTransform firstFacing = first.RenderTransform as ScaleTransform, secondFacing = second.RenderTransform as ScaleTransform;
-            BitmapSource preparedFirst = edgeRasterCache.Render((BitmapSource)first.Source, firstRect, firstFacing != null && firstFacing.ScaleX < 0, width, height);
-            BitmapSource preparedSecond = Object.ReferenceEquals(first, second) ? preparedFirst :
-                edgeRasterCache.Render((BitmapSource)second.Source, secondRect, secondFacing != null && secondFacing.ScaleX < 0, width, height);
-            int weight = Object.ReferenceEquals(first, second) ? 0 : (int)Math.Round(second.Opacity / (first.Opacity + second.Opacity) * 256);
+            firstRect.Offset(-union.X, -union.Y);
+            secondRect.Offset(-union.X, -union.Y);
+            firstRect.Location = new Point(Math.Round(firstRect.X, 6), Math.Round(firstRect.Y, 6));
+            secondRect.Location = new Point(Math.Round(secondRect.X, 6), Math.Round(secondRect.Y, 6));
+            BitmapSource preparedFirst = edgeRasterCache.Render(first, firstRect, mirrorFirst, width, height);
+            BitmapSource preparedSecond = Object.ReferenceEquals(first, second) && firstRect == secondRect && mirrorFirst == mirrorSecond
+                ? preparedFirst : edgeRasterCache.Render(second, secondRect, mirrorSecond, width, height);
             edgeSpritePresenter.PresentWeighted(preparedFirst, preparedSecond, weight, "edge:" + dockTarget.Edge.ToString());
             edgeSpriteImage.Source = edgeSpritePresenter.Output;
             edgeSpriteImage.Width = width / 2.0; edgeSpriteImage.Height = height / 2.0;
@@ -1454,7 +1473,7 @@ namespace RainbowDashDesktop
                 if (!closing && allowClick && settings.EdgeDockingEnabled && edgeArt.Complete)
                 {
                     EdgeDockTarget target;
-                    if (EdgeDockGeometry.TryFindDock(VisiblePetBounds(), lastPointerPosition, GetEdgeMonitors(), out target))
+                    if (EdgeDockGeometry.TryFindDock(VisiblePetBounds(), lastPointerPosition, GetEdgeMonitors(), out target, settings.Scale))
                     { EnterDock(target, true); docked = true; }
                 }
                 if (!docked) ClampToScreen();
@@ -1570,15 +1589,23 @@ namespace RainbowDashDesktop
         private void ExpandDockAnimated(bool save)
         {
             if (!IsDocked || dockLeaving) return;
+            bool side = EdgeDockGeometry.IsSide(dockTarget.Edge);
             string name = DockActionName(dockTarget.Edge);
-            if (ReducedMotionActive || !enhancedArt.Has(name)) { ExpandDock(save); return; }
+            if (ReducedMotionActive || (side ? dockTransition : !enhancedArt.Has(name))) { ExpandDock(save); return; }
             dockTransition = false;
             dockLeaving = true; dockLeaveSave = save;
             dockLeavingAt = interactionClock.ElapsedMilliseconds;
-            dockLeavingFrom = new Rect(Left, Top, Math.Max(1, ActualWidth), Math.Max(1, ActualHeight));
+            dockLeavingFrom = new Rect(Left, Top, Width, Height);
             dockLeavingTo = EdgeDockGeometry.UndockBounds(dockTarget,
                 new Size(BaseWidth * settings.Scale, (StageHeight + 8) * settings.Scale), GetEdgeMonitors());
-            normalStack.Visibility = Visibility.Collapsed; edgePony.Opacity = 0;
+            normalStack.Visibility = Visibility.Collapsed;
+            if (side && !dockLeavingTo.IsEmpty)
+            {
+                sideMotion = new SideDockMotion(dockLeavingTo, dockLeavingFrom, NormalSpriteBounds(dockLeavingTo), null);
+                sideMotion.DockedAmount = 1;
+                AdvanceRestVisual(dockLeavingAt);
+            }
+            else edgePony.Opacity = 0;
             AdvanceDockExit(dockLeavingAt);
         }
 
@@ -1589,6 +1616,12 @@ namespace RainbowDashDesktop
             double smooth = t * t * (3 - 2 * t);
             Rect end = dockLeavingTo;
             if (end.IsEmpty) { ExpandDock(dockLeaveSave); return; }
+            if (sideMotion != null)
+            {
+                if (t >= 1) ExpandDock(dockLeaveSave);
+                else { AdvanceSideMotion(1 - smooth); PresentEdgeSprite(); }
+                return;
+            }
             SetWindowBounds(new Rect(dockLeavingFrom.X + (end.X - dockLeavingFrom.X) * smooth,
                 dockLeavingFrom.Y + (end.Y - dockLeavingFrom.Y) * smooth,
                 dockLeavingFrom.Width + (end.Width - dockLeavingFrom.Width) * smooth,
@@ -1730,7 +1763,7 @@ namespace RainbowDashDesktop
                     if (previous.Dock != null)
                     {
                         EdgeDockTarget target = EdgeDockGeometry.Resolve(previous.Dock.Edge, previous.Dock.MonitorId,
-                            previous.Dock.Fraction, GetEdgeMonitors(), false, new Point(previous.NormalBounds.X, previous.NormalBounds.Y));
+                            previous.Dock.Fraction, GetEdgeMonitors(), false, new Point(previous.NormalBounds.X, previous.NormalBounds.Y), settings.Scale);
                         if (target != null) EnterDock(target, false); else ExpandDock(false);
                     }
                     else
@@ -1753,13 +1786,13 @@ namespace RainbowDashDesktop
                 foreach (DockEdge edge in new DockEdge[] { DockEdge.Left, DockEdge.Right, DockEdge.Top, DockEdge.Bottom })
                 {
                     bool vertical = edge == DockEdge.Left || edge == DockEdge.Right;
-                    Size size = EdgeDockGeometry.CompactSize(edge);
+                    Size size = EdgeDockGeometry.CompactSize(edge, settings.Scale);
                     double start = vertical ? screen.WorkArea.Top : screen.WorkArea.Left;
                     double length = vertical ? screen.WorkArea.Height : screen.WorkArea.Width;
                     double extent = vertical ? size.Height : size.Width;
                     double denominator = length - EdgeDockGeometry.CornerMargin * 2 - extent;
                     double fraction = denominator <= 0 ? .5 : ((vertical ? center.Y : center.X) - start - EdgeDockGeometry.CornerMargin - extent / 2) / denominator;
-                    EdgeDockTarget target = EdgeDockGeometry.Resolve(edge, screen.Id, fraction, monitors, false);
+                    EdgeDockTarget target = EdgeDockGeometry.Resolve(edge, screen.Id, fraction, monitors, false, settings.Scale);
                     if (target == null) continue;
                     double distance = edge == DockEdge.Left ? center.X - screen.WorkArea.Left : edge == DockEdge.Right ? screen.WorkArea.Right - center.X :
                         edge == DockEdge.Top ? center.Y - screen.WorkArea.Top : screen.WorkArea.Bottom - center.Y;
@@ -1829,7 +1862,12 @@ namespace RainbowDashDesktop
         private void ApplyScaleAndCollapse()
         {
             normalStack.LayoutTransform = new ScaleTransform(settings.Scale, settings.Scale);
-            if (IsDocked) { LayoutEdge(); return; }
+            if (IsDocked)
+            {
+                if (EdgeDockGeometry.CompactSize(dockTarget.Edge, settings.Scale) != dockTarget.Bounds.Size) RefreshDockGeometry();
+                else LayoutEdge();
+                return;
+            }
             root.LayoutTransform = Transform.Identity;
             root.Width = BaseWidth * settings.Scale;
             root.Height = (StageHeight + 8) * settings.Scale;
@@ -2006,9 +2044,9 @@ namespace RainbowDashDesktop
             Show();
             NotifyRestInteraction(RestAttentionKind.Menu);
             UserIntervened();
-            if (IsDocked) ExpandDockAnimated(true);
             WindowState = WindowState.Normal;
-            ClampToScreen();
+            if (IsDocked) ExpandDockAnimated(true);
+            else ClampToScreen();
             if (Topmost) { Topmost = false; Topmost = true; }
         }
 
@@ -2072,13 +2110,29 @@ namespace RainbowDashDesktop
 
         private void EnterDock(EdgeDockTarget target, bool animate)
         {
-            animate = animate && !ReducedMotionActive;
+            animate = animate && !ReducedMotionActive && !(dockLeaving && sideMotion != null);
             if (target == null || !edgeArt.Complete) return;
+            BitmapSource entrySource = spriteImage.Source as BitmapSource;
             CancelEnhancedAction(true); gazeFrame = -1; dockLeaving = false;
             lastEnhancedName = null; overlayEndingAt = -1; enhancedPony.Visibility = Visibility.Collapsed; pony.Opacity = 1;
             dockTransitionFrom = new Rect(Left, Top, Math.Max(1, ActualWidth), Math.Max(1, ActualHeight));
-            dockTarget = EdgeDockGeometry.Resolve(target.Edge, target.MonitorId, target.Fraction, GetEdgeMonitors(), false);
+            dockTarget = EdgeDockGeometry.Resolve(target.Edge, target.MonitorId, target.Fraction, GetEdgeMonitors(), false, settings.Scale);
             if (dockTarget == null) return;
+            sideMotion = null;
+            ResetSidePeek();
+            if (animate && EdgeDockGeometry.IsSide(dockTarget.Edge))
+            {
+                animate = entrySource != null;
+                if (animate)
+                {
+                    if (!entrySource.IsFrozen)
+                    {
+                        entrySource = new WriteableBitmap(entrySource);
+                        entrySource.Freeze();
+                    }
+                    sideMotion = new SideDockMotion(dockTransitionFrom, dockTarget.Bounds, NormalSpriteBounds(dockTransitionFrom), entrySource);
+                }
+            }
             CancelPatrol(interactionClock.ElapsedMilliseconds, false);
             CancelPetTouch();
             edgeHover.Reset();
@@ -2099,7 +2153,7 @@ namespace RainbowDashDesktop
         private Rect EdgeWindowBounds(bool peek)
         {
             EdgeDockTarget resolved = EdgeDockGeometry.Resolve(dockTarget.Edge, dockTarget.MonitorId,
-                dockTarget.Fraction, GetEdgeMonitors(), peek);
+                dockTarget.Fraction, GetEdgeMonitors(), peek, settings.Scale);
             if (resolved == null) return dockTarget.Bounds;
             return resolved.Bounds;
         }
@@ -2108,21 +2162,21 @@ namespace RainbowDashDesktop
         {
             if (!IsDocked) return;
             bool peek = previewEdgeHover || edgeHover.IsPeeking;
+            quotaRing.Root.Visibility = Visibility.Collapsed;
+            if (EdgeDockGeometry.IsSide(dockTarget.Edge))
+            {
+                LayoutSideEdge(peek);
+                PresentEdgeSprite();
+                return;
+            }
             Rect bounds = EdgeWindowBounds(peek);
             Size face = EdgeDockGeometry.CompactSize(dockTarget.Edge);
-            bool side = dockTarget.Edge == DockEdge.Left || dockTarget.Edge == DockEdge.Right;
-            double factor = peek ? (side ? (face.Width + 12) / face.Width : (face.Height + 12) / face.Height) : 1;
+            double factor = peek ? (face.Height + 12) / face.Height : 1;
             double imageWidth = face.Width * factor, imageHeight = face.Height * factor;
-            // The hooves remain attached to the bezel when peeking; uniform scale
-            // exposes a little more of the pose without floating it off the edge.
-            double imageX = side ? 0 : (face.Width - imageWidth) / 2;
-            double imageY = side ? (face.Height - imageHeight) / 2 : 0;
+            double imageX = (face.Width - imageWidth) / 2;
             edgePony.Width = imageWidth; edgePony.Height = imageHeight;
-            edgePony.RenderTransform = dockTarget.Edge == DockEdge.Left ? new ScaleTransform(-1, 1) : Transform.Identity;
-            Canvas.SetLeft(edgePony, imageX); Canvas.SetTop(edgePony, imageY);
-            // Docking always hides the quota ring, including the hover pose.
-            // The normal-view preference is retained and restored on expansion.
-            quotaRing.Root.Visibility = Visibility.Collapsed;
+            edgePony.RenderTransform = Transform.Identity;
+            Canvas.SetLeft(edgePony, imageX); Canvas.SetTop(edgePony, 0);
             if (!dockTransition) SetWindowBounds(bounds);
             PresentEdgeSprite();
         }
@@ -2148,14 +2202,21 @@ namespace RainbowDashDesktop
             if (!IsDocked) return;
             long now = interactionClock.ElapsedMilliseconds;
             if (dockLeaving) { AdvanceDockExit(now); return; }
-            if (!edgePressed && edgeHover.Advance(now)) LayoutEdge();
-            int frame = previewEdgeFrame >= 0 ? previewEdgeFrame : edgeExpression.Sample(shownState, now, ReducedMotionActive);
+            if (!edgePressed && (!dockTransition || sideMotion == null) && edgeHover.Advance(now)) LayoutEdge();
+            else if (SidePeekMoving) AdvanceSidePeek(now);
+            int frame = previewEdgeFrame >= 0 ? previewEdgeFrame : edgeExpression.Sample(shownState, now, ReducedMotionActive, dockTarget.Edge);
             BitmapSource edgeFrame = edgeArt.Get(dockTarget.Edge, focus.IsActive || rest.IsSleepingLike || EffectiveRestPreview == "sleeping" || EffectiveRestPreview == "fall" ? 8 : frame);
             edgePony.Source = edgeFrame == null ? null : spriteAppearance.Colorize(edgeFrame, "edge:" + dockTarget.Edge.ToString().ToLowerInvariant());
             if (dockTransition)
             {
                 double t = Math.Max(0, Math.Min(1, (now - dockTransitionAt) / 600.0));
                 double smooth = t * t * (3 - 2 * t);
+                if (sideMotion != null)
+                {
+                    AdvanceSideMotion(smooth);
+                    if (t >= 1) FinishDockEntry();
+                    return;
+                }
                 Rect end = dockTarget.Bounds;
                 SetWindowBounds(new Rect(dockTransitionFrom.X + (end.X - dockTransitionFrom.X) * smooth,
                     dockTransitionFrom.Y + (end.Y - dockTransitionFrom.Y) * smooth,
@@ -2171,23 +2232,28 @@ namespace RainbowDashDesktop
                     edgePony.Opacity = t < .866666667 ? 0 : (t - .866666667) / .133333333;
                 }
                 else edgePony.Opacity = Math.Min(1, Math.Max(0, (t - .22) / .58));
-                if (t >= 1)
-                {
-                    dockTransition = false; normalStack.Visibility = Visibility.Collapsed;
-                    normalStack.Opacity = 1; edgePony.Opacity = 1; dockActionPony.Visibility = Visibility.Collapsed; LayoutEdge(); SaveSettings();
-                }
+                if (t >= 1) FinishDockEntry();
             }
             }
             finally { PresentSprite(interactionClock.ElapsedMilliseconds); }
+        }
+
+        private void FinishDockEntry()
+        {
+            sideMotion = null;
+            dockTransition = false; normalStack.Visibility = Visibility.Collapsed;
+            normalStack.Opacity = 1; edgePony.Opacity = 1; dockActionPony.Visibility = Visibility.Collapsed;
+            LayoutEdge(); SaveSettings();
         }
 
         private void RefreshDockGeometry()
         {
             if (!IsDocked) return;
             EdgeDockTarget resolved = EdgeDockGeometry.Resolve(dockTarget.Edge, dockTarget.MonitorId,
-                dockTarget.Fraction, GetEdgeMonitors(), false, new Point(Left, Top));
+                dockTarget.Fraction, GetEdgeMonitors(), false, new Point(Left, Top), settings.Scale);
             if (resolved == null) { ExpandDock(true); return; }
             dockTarget = resolved; dockTransition = false; dockLeaving = false;
+            sideMotion = null;
             dockActionPony.Visibility = Visibility.Collapsed;
             normalStack.Visibility = Visibility.Collapsed; normalStack.Opacity = 1; edgePony.Opacity = 1;
             LayoutEdge(); SaveSettings();
@@ -2199,6 +2265,7 @@ namespace RainbowDashDesktop
             Rect normal = EdgeDockGeometry.UndockBounds(dockTarget,
                 new Size(BaseWidth * settings.Scale, (StageHeight + 8) * settings.Scale), GetEdgeMonitors());
             dockTarget = null; dockTransition = false; dockLeaving = false; edgePressed = false; edgeHover.Reset();
+            sideMotion = null;
             dockActionPony.Visibility = Visibility.Collapsed;
             if (edgeCanvas.IsMouseCaptured) edgeCanvas.ReleaseMouseCapture();
             edgeCanvas.Children.Remove(quotaRing.Root);

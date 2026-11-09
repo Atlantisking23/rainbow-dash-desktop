@@ -55,6 +55,7 @@ internal static class EdgeUiTests
                 StackPanel normal = (StackPanel)Field(window, "normalStack");
                 Image image = (Image)Field(window, "edgePony");
                 QuotaRing quota = (QuotaRing)Field(window, "quotaRing");
+                settings.ReduceMotion = true;
                 foreach (DockEdge edge in new DockEdge[] { DockEdge.Left, DockEdge.Right, DockEdge.Top, DockEdge.Bottom })
                 {
                     EdgeDockTarget target = EdgeDockGeometry.Resolve(edge, "", .5, monitors, false);
@@ -108,6 +109,17 @@ internal static class EdgeUiTests
                 settings.Scale = 1.25; Call(window, "ApplyScaleAndCollapse"); window.UpdateLayout();
                 Near(window.Width, 380, "Changing scale after an expansion resizes the actual native window");
                 Near(window.Height, 302.5, "Full height follows user scale after manual compact sizing");
+                EdgeDockTarget scaledSide = EdgeDockGeometry.Resolve(DockEdge.Right, "", .5, monitors, false);
+                if (scaledSide != null)
+                {
+                    Call(window, "EnterDock", scaledSide, false); window.UpdateLayout();
+                    Size native = NativeSize(window);
+                    Near(native.Width, 105, "Side compact width follows 125% pet scale");
+                    Near(native.Height, 140, "Side compact height follows 125% pet scale");
+                    Near(image.Width, 120, "Side artwork follows 125% pet scale");
+                    Call(window, "ExpandDock", false); window.UpdateLayout();
+                }
+                settings.ReduceMotion = false;
                 settings.Scale = 1; Call(window, "ApplyScaleAndCollapse"); window.UpdateLayout();
                 Image pony = (Image)Field(window, "pony");
                 foreach (double scale in new double[] { 1.25, 1.5 })
@@ -149,16 +161,27 @@ internal static class EdgeUiTests
                     drag.Begin(new Point(0, 0), new Point(window.Left, window.Top), false);
                     drag.Move(new Point(20, 20), 4, 4);
                     Set(window, "lastPointerPosition", release);
+                    bool isSide = edge == DockEdge.Left || edge == DockEdge.Right;
+                    window.UpdateLayout();
+                    Rect preDock = (Rect)Call(window, "VisiblePetBounds");
                     Call(window, "FinishPointerGesture", true);
                     Check(Field(window, "dockTarget") != null, edge + " real release docks when held pony crosses the border");
                     Check((bool)Field(window, "dockTransition"), edge + " released sprint enters the 600 ms transition");
                     long start = (long)Field(window, "dockTransitionAt");
+                    if (isSide)
+                    {
+                        Set(window, "dockTransitionAt", start + 250); Call(window, "AdvanceEdge"); window.UpdateLayout();
+                        Rect first = (Rect)Call(window, "VisiblePetBounds");
+                        Near(first.Left, preDock.Left, edge + " entrance starts at the visible normal pose");
+                        Near(first.Width, preDock.Width, edge + " entrance starts without shrinking the normal pose");
+                    }
                     Set(window, "dockTransitionAt", start - 300); Call(window, "AdvanceEdge");
                     Check(window.Width >= target.Bounds.Width && window.Width <= 304, edge + " actual native hit area shrinks during entrance");
                     Set(window, "dockTransitionAt", start - 700); Call(window, "AdvanceEdge");
                     Near(window.Width, target.Bounds.Width, edge + " entrance settles at compact width");
                     Check(!(bool)Field(window, "dockTransition"), edge + " transition completes once");
-                    Call(window, "ExpandDock", false); window.UpdateLayout();
+                    if (isSide) CheckSideExit(window, edge);
+                    else { Call(window, "ExpandDock", false); window.UpdateLayout(); }
                 }
                 EdgeExpressionController expression = new EdgeExpressionController();
                 Check(expression.Sample("received", 0) == 1 && expression.Sample("received", 1200) == 0, "Receipt reaction is brief");
@@ -166,6 +189,25 @@ internal static class EdgeUiTests
                 Check(expression.Sample("working", 5000) == 2, "Work expression is focused");
                 Check(expression.Sample("working", 8600) == 3 && expression.Sample("working", 8650) == 4 &&
                     expression.Sample("working", 8720) == 5 && expression.Sample("working", 8800) == 2, "Blink uses half/closed/open cels then returns to focus");
+                EdgeExpressionController side = new EdgeExpressionController();
+                Check(side.Sample("idle", 0, false, DockEdge.Left) == 1, "Side idle starts with the curious, open-eyed pose");
+                Check(side.Sample("idle", 3600, false, DockEdge.Left) == 3 && side.Sample("idle", 3650, false, DockEdge.Left) == 4 &&
+                    side.Sample("idle", 3720, false, DockEdge.Left) == 3 && side.Sample("idle", 3800, false, DockEdge.Left) == 1,
+                    "Side idle blink closes and opens on the same gaze");
+                bool awakeDuringSideIdle = true;
+                for (long time = 3820; time <= 28000; time += 20)
+                    awakeDuringSideIdle &= side.Sample("idle", time, false, DockEdge.Left) != 8;
+                Check(awakeDuringSideIdle, "Side idle never substitutes the sleep pose");
+                Check(side.Sample("working", 29000, false, DockEdge.Right) == 2 &&
+                    side.Sample("working", 32600, false, DockEdge.Right) == 5 &&
+                    side.Sample("working", 32720, false, DockEdge.Right) == 5,
+                    "Side work blink keeps the focused gaze");
+                Check(side.Sample("completed", 33000, false, DockEdge.Right) == 6 &&
+                    side.Sample("completed", 34900, false, DockEdge.Right) == 1, "Side completion smiles before returning to curious idle");
+                Check(side.Sample("waiting", 35000, false, DockEdge.Right) == 7 &&
+                    side.Sample("waiting", 40000, false, DockEdge.Right) == 7 &&
+                    side.Sample("error", 41000, true, DockEdge.Right) == 7 &&
+                    side.Sample("idle", 42000, true, DockEdge.Right) == 1, "Side attention lasts until the task state changes");
                 Check((File.Exists(settingsFile) ? File.ReadAllText(settingsFile) : null) == before,
                     "UI test and preview modes leave user settings untouched");
                 Console.WriteLine("PASS " + checks + " edge UI checks"); result = 0;
@@ -175,6 +217,25 @@ internal static class EdgeUiTests
         };
         app.Run(window);
         return result;
+    }
+
+    private static void CheckSideExit(PetWindow window, DockEdge edge)
+    {
+        window.UpdateLayout();
+        Rect compact = (Rect)Call(window, "VisiblePetBounds");
+        Call(window, "ExpandDockAnimated", false); window.UpdateLayout();
+        Rect outgoing = (Rect)Call(window, "VisiblePetBounds");
+        Check(!compact.IsEmpty && compact.Width > 0 && compact.Height > 0, edge + " compact sprite contains visible art");
+        Near(outgoing.X, compact.X, edge + " exit starts at the currently visible side artwork");
+        Near(outgoing.Width, compact.Width, edge + " exit starts without resizing the side artwork");
+        long start = (long)Field(window, "dockLeavingAt");
+        Call(window, "AdvanceDockExit", start + 570L); window.UpdateLayout();
+        Rect before = (Rect)Call(window, "VisiblePetBounds");
+        Call(window, "AdvanceDockExit", start + 600L); window.UpdateLayout();
+        Rect after = (Rect)Call(window, "VisiblePetBounds");
+        Check(Field(window, "dockTarget") == null && after.Width > 0, edge + " shows the complete normal sprite when it finishes expanding");
+        Check(Math.Abs(before.Left - after.Left) <= 12 && Math.Abs(before.Right - after.Right) <= 12,
+            edge + " last exit frames meet normal artwork without clipping or a horizontal jump. Before=" + before + " after=" + after);
     }
 
     private static Rect OpaqueLocalBounds(Image image)
