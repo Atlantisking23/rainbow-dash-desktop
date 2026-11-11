@@ -115,12 +115,12 @@
       "note": "Keep the state baseline; color calibration is separate from geometry."
     },
     "state:dragging": {
-      "scale": 1,
+      "scale": 1.20,
       "anchorX": 256,
-      "anchorY": 480,
+      "anchorY": 400,
       "offsetX": 0,
       "offsetY": 0,
-      "note": "512x384 source is bottom aligned at virtualY+128 on 512x512; no extra drag multiplier."
+      "note": "Fixed source calibration for every sprint frame and both directions, without fitting individual frames."
     },
     "state:error": {
       "scale": 1,
